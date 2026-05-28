@@ -7,10 +7,74 @@
     src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYULTRALIGHTITALIC.OTF") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYTHINITALIC.OTF") format("opentype");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYLIGHTITALIC.OTF") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYSEMIBOLDITALIC.OTF") format("opentype");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYHEAVYITALIC.OTF") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("/fonts/sf-pro-display/SFPRODISPLAYBLACKITALIC.OTF") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+}
+
 @theme {
     --color-yellow: #e7d393;
     --color-white-100: #efefef;
     --font-sans: "Mona Sans", sans-serif;
+    --font-sf-pro: "SF Pro Display", sans-serif;
     --font-modern-negra: "Modern Negra", sans-serif;
     --font-serif: "DM Serif Text", serif;
 }
@@ -61,7 +125,11 @@ body {
 
 @layer components {
     main {
-        @apply w-full overflow-x-hidden;
+        @apply relative w-full overflow-x-hidden;
+    }
+
+    .preview-background {
+        @apply fixed inset-0 z-0 pointer-events-none;
     }
 
     nav {
