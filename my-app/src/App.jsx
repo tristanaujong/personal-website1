@@ -5,6 +5,7 @@ import { Preview } from 'shaders/react'
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Experience from './components/Experience';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -13,6 +14,7 @@ const App = () => {
         <main>
             <Navbar />
             <Hero/>
+            <Experience/>
         </main>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import heroPicture from './images/hero-picture.png'
+import arrowPicture from './images/arrow-down.png'
 import Tilt from "react-parallax-tilt";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -28,9 +29,10 @@ const Hero = () => {
                 y: 50,
                 scale: 0.9,
             }, '-=0.65')
-            .from('.hero-subtext', {
+            .from('.hero-subtext > *', {
                 opacity: 0,
                 y: 50,
+                stagger: 0.12
             }, '-=0.5');
     }, { scope: heroRef });
     
@@ -67,8 +69,10 @@ const Hero = () => {
                 ></img>
             </Tilt>
         </div>
-        <div className="hero-subtext text-stone-900 flex items-center justify-center ">
+        <div className="hero-subtext text-stone-900 flex flex-col items-center justify-center gap-6 mb-8">
             <h2 className="font-sf-pro text-xl md:text-3xl">Rising Senior at Texas A&M pursuing a Bachelor's in Computer Science and Minor in Statistics</h2>
+            <h4 className="text-m md:text-l">SCROLL FOR MORE</h4>
+            <img src={arrowPicture} className="w-24" ></img>
         </div>
     </section>
     </>
