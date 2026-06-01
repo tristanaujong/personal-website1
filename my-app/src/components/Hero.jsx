@@ -27,14 +27,18 @@ const Hero = () => {
                 opacity: 0,
                 y: 50,
                 scale: 0.9,
-            }, '-=0.65');
+            }, '-=0.65')
+            .from('.hero-subtext', {
+                opacity: 0,
+                y: 50,
+            }, '-=0.5');
     }, { scope: heroRef });
     
 
     return (
     <>
     <section id="hero" ref={heroRef}>
-        <div className="mx-auto flex min-h-dvh w-full max-w-[96rem] flex-col items-center justify-center gap-8 px-6 pt-24 2xl:flex-row 2xl:gap-[clamp(4rem,9vw,11rem)] 2xl:px-12 2xl:pt-0">
+        <div className="min-h-175 text-stone-900 mx-auto flex w-full max-w-[96rem] flex-col items-center justify-center gap-8 px-6 pt-24 2xl:flex-row 2xl:gap-[clamp(4rem,9vw,11rem)] 2xl:px-12 2xl:pt-0">
             <div className="flex w-fit shrink-0 flex-col items-start justify-center">
                 <h1 className="hero-title-line whitespace-nowrap font-sf-pro text-[clamp(3rem,13vw,9rem)] font-bold leading-none">
                     TRISTAN-LEE
@@ -62,6 +66,9 @@ const Hero = () => {
                     className="w-full object-contain"
                 ></img>
             </Tilt>
+        </div>
+        <div className="hero-subtext text-stone-900 flex items-center justify-center ">
+            <h2 className="font-sf-pro text-xl md:text-3xl">Rising Senior at Texas A&M pursuing a Bachelor's in Computer Science and Minor in Statistics</h2>
         </div>
     </section>
     </>

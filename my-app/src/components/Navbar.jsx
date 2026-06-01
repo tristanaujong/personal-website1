@@ -26,13 +26,13 @@ const Navbar = () => {
         <nav>
             <div>
                 <a href="#home" className="flex items-center gap-2">
-                    <p className="font-sf-pro font-medium underline underline-offset-2">Tristan's World</p>
+                    <p className="font-sf-pro font-medium text-stone-900">T R I S T A N S-W O R L D</p>
                 </a>
 
                 <ul>
                     {navLinks.map((link) => (
                         <li key={link.id}>
-                            <a href={`#${link.id}`}>{link.title}</a>
+                            <a href={`#${link.id}`} className="text-stone-900">{link.title}</a>
                         </li>
                     ))}
                 </ul>

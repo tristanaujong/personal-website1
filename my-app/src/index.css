@@ -82,7 +82,7 @@
 html,
 body {
     width: 100%;
-    background-color: black;
+    background-color: oklch(97% 0.001 106.424);
     color: white;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -156,7 +156,7 @@ body {
         @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
     }
 
-    #hero {
+    /* #hero {
         @apply relative z-10 min-h-dvh w-full border border-transparent;
 
         .left-leaf {
@@ -194,7 +194,7 @@ body {
                 }
             }
         }
-    }
+    } */
 
     video {
         @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
