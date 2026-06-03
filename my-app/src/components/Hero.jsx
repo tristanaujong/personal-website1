@@ -51,6 +51,7 @@ const Hero = () => {
             </div>
             <Tilt
             className="hero-image w-[min(70vw,28rem)] max-w-full shrink-0 2xl:w-[clamp(16rem,28vw,28rem)]"
+            trackOnWindow={true}
             tiltAngleXInitial={5}
             tiltAngleYInitial={10}
             tiltMaxAngleX={20}
