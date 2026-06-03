@@ -85,7 +85,7 @@ body {
     background-color: oklch(97% 0.001 106.424);
     color: white;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 @utility flex-center {
@@ -125,7 +125,7 @@ body {
 
 @layer components {
     main {
-        @apply relative w-full overflow-x-hidden;
+        @apply relative w-full overflow-x-clip;
     }
 
     .preview-background {
@@ -133,7 +133,22 @@ body {
     }
 
     nav {
-        @apply fixed z-50 w-full;
+        @apply fixed left-0 top-0 z-50 w-full;
+        --nav-bg-opacity: 0;
+        --nav-blur: 0px;
+        isolation: isolate;
+
+        &::before {
+            content: "";
+            @apply pointer-events-none absolute left-0 top-0 w-full;
+            height: calc(100% + 2rem);
+            z-index: -1;
+            background: rgb(250 250 249 / var(--nav-bg-opacity));
+            backdrop-filter: blur(var(--nav-blur));
+            -webkit-backdrop-filter: blur(var(--nav-blur));
+            mask-image: linear-gradient(to bottom, black 0%, black 62%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 62%, transparent 100%);
+        }
 
         div {
             @apply flex md:flex-row flex-col md:justify-between items-center gap-5 py-5 lg:px-0 px-5 container mx-auto;

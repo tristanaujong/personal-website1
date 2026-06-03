@@ -6,21 +6,21 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Navbar = () => {
-    // useGSAP(() => {
-    //     const navTween = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: 'nav',
-    //             start: 'bottom top'
-    //         }
-    //     });
+    useGSAP(() => {
+        const navTween = gsap.timeline({
+            scrollTrigger: {
+                trigger: 'nav',
+                start: 'bottom top'
+            }
+        });
         
-    //     navTween.fromTo('nav', { backgroundColor: 'transparent'} , {
-    //         backgroundColor: '#00000050',
-    //         backgroundFilter: 'blur(10px)',
-    //         duration: 1,
-    //         ease: 'power1.inOut'
-    //     });
-    // })
+        navTween.fromTo('nav', { '--nav-bg-opacity': 0, '--nav-blur': '0px'} , {
+            '--nav-bg-opacity': 0.6,
+            '--nav-blur': '16px',
+            duration: 1,
+            ease: 'power1.inOut'
+        });
+    })
 
     return (
         <nav>
