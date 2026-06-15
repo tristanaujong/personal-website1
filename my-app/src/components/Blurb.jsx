@@ -7,7 +7,7 @@ const Blurb = () => {
   return (
     <section id="blurb" className="mt-28">
         <div className="mx-auto flex w-full max-w-[96rem] justify-start px-6 2xl:px-6">
-            <p className="w-full lg:w-3/4 font-sf-pro text-4xl font-bold text-stone-900">
+            <p className="w-full lg:w-3/4 font-sf-pro text-4xl font-normal text-stone-900 leading-[1.25]">
               I'm a Chinese-Indonesian born and raised in Dallas-Fort Worth. I curate and execute ideas using software
               and technology as my medium to express them. I have an eye for the finest details and
               meticulously plan things out to deliver extraordinary results. Discovering the "why" and "how" of things in this world has

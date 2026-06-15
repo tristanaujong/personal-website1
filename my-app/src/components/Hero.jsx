@@ -27,25 +27,21 @@ const Hero = () => {
         timeline
             .from('.hero-title-line', {
                 opacity: 0,
-                y: 80,
-                stagger: 0.12,
+                y: 300,
+                stagger: 0.24,
+                delay: 0.2
             })
             .from('.hero-icon', {
                 opacity: 0,
                 y: 80,
                 scale: 0.9,
                 stagger: 0.1,
-            }, '-=0.75')
+            }, '-=0.55')
             .from('.hero-image', {
                 opacity: 0,
                 y: 50,
                 scale: 0.9,
-            }, '-=0.65')
-            .from('.hero-subtext > *', {
-                opacity: 0,
-                y: 50,
-                stagger: 0.12
-            }, '-=0.5');
+            }, '-=0.65');
     }, { scope: heroRef });
     
 
