@@ -25,7 +25,7 @@ const Navbar = () => {
         <nav>
             <div>
                 <a href="#home" className="flex items-center gap-2">
-                    <p className="font-sf-pro font-medium text-stone-900">T R I S T A N S-W O R L D</p>
+                    <p className="font-sf-pro font-medium text-stone-900">TRISTAN'S WORLD.</p>
                 </a>
 
                 <ul>
