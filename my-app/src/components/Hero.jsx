@@ -51,8 +51,24 @@ const Hero = () => {
 
     return (
     <>
+    <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="instagram-hover-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#405de6" />
+                <stop offset="11.11%" stopColor="#5851db" />
+                <stop offset="22.22%" stopColor="#833ab4" />
+                <stop offset="33.33%" stopColor="#c13584" />
+                <stop offset="44.44%" stopColor="#e1306c" />
+                <stop offset="55.56%" stopColor="#fd1d1d" />
+                <stop offset="66.67%" stopColor="#f56040" />
+                <stop offset="77.78%" stopColor="#f77737" />
+                <stop offset="88.89%" stopColor="#fcaf45" />
+                <stop offset="100%" stopColor="#ffdc80" />
+            </linearGradient>
+        </defs>
+    </svg>
     <section id="hero" ref={heroRef} className="flex min-h-dvh items-center justify-center">
-        <div className="text-stone-900 mx-auto flex w-full max-w-[96rem] flex-col items-center justify-center gap-8 px-6 py-24 2xl:flex-row 2xl:gap-[clamp(4rem,9vw,11rem)] 2xl:px-12 2xl:py-0">
+        <div className="text-stone-900 mx-auto flex w-full max-w-[96rem] flex-col items-center justify-center gap-8 px-6 py-12 2xl:flex-row 2xl:gap-[clamp(4rem,9vw,11rem)] 2xl:px-12">
             <div className="flex w-fit shrink-0 flex-col items-start justify-center">
                 <h1 className="hero-title-line whitespace-nowrap font-sf-pro text-[clamp(3rem,13vw,9rem)] font-bold leading-none">
                     TRISTAN-LEE
@@ -71,7 +87,7 @@ const Hero = () => {
                     aria-label="LinkedIn"
                     className="hero-icon"
                     >
-                        <FaLinkedin className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105" />
+                        <FaLinkedin className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105 hover:text-[#0A66C2]" />
                     </a>
                     <a
                     href="https://github.com/tristanaujong"
@@ -80,7 +96,7 @@ const Hero = () => {
                     aria-label="GitHub"
                     className="hero-icon"
                     >
-                        <FaGithub className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105" />
+                        <FaGithub className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105 hover:text-[#24292e]" />
                     </a>
                     <a
                     href="https://instagram.com/tristan_mahjong"
@@ -89,25 +105,25 @@ const Hero = () => {
                     aria-label="Instagram"
                     className="hero-icon"
                     >
-                        <FaInstagram className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105" />
+                        <FaInstagram className="instagram-icon text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105" />
                     </a>
                     <a
                     href="https://open.spotify.com/user/fsnqhbcwp223y9aije3cv0hnh?si=a1bcf073425e4bab"
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="GitHub"
+                    aria-label="Spotify"
                     className="hero-icon"
                     >
-                        <FaSpotify className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105" />
+                        <FaSpotify className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105 hover:text-[#1DB954]" />
                     </a>
                     <a
                     href="https://www.youtube.com/@bobasi22"
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="GitHub"
+                    aria-label="Youtube"
                     className="hero-icon"
                     >
-                        <FaYoutube className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105" />
+                        <FaYoutube className="text-4xl opacity-60 transition-opacity transition-transform duration-200 hover:opacity-100 hover:-translate-y-1 hover:scale-105 hover:text-[#ff0000]" />
                     </a>
                 </div>
             </div>
