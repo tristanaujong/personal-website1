@@ -51,8 +51,8 @@ const Hero = () => {
 
     return (
     <>
-    <section id="hero" ref={heroRef}>
-        <div className="min-h-175 text-stone-900 mx-auto flex w-full max-w-[96rem] flex-col items-center justify-center gap-8 px-6 pt-24 2xl:flex-row 2xl:gap-[clamp(4rem,9vw,11rem)] 2xl:px-12 2xl:pt-0">
+    <section id="hero" ref={heroRef} className="flex min-h-dvh items-center justify-center">
+        <div className="text-stone-900 mx-auto flex w-full max-w-[96rem] flex-col items-center justify-center gap-8 px-6 py-24 2xl:flex-row 2xl:gap-[clamp(4rem,9vw,11rem)] 2xl:px-12 2xl:py-0">
             <div className="flex w-fit shrink-0 flex-col items-start justify-center">
                 <h1 className="hero-title-line whitespace-nowrap font-sf-pro text-[clamp(3rem,13vw,9rem)] font-bold leading-none">
                     TRISTAN-LEE
