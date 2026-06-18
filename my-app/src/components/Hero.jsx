@@ -44,7 +44,7 @@ const Hero = () => {
             }, '-=0.65');
     }, { scope: heroRef });
     
-
+// TODO: fix small screen spacing 
     return (
     <>
     <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
