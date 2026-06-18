@@ -16,7 +16,7 @@ const Blurb = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".blurb-text",
-        start: "top 80%",
+        start: "top 70%",
         end: "center center",
         scrub: true
       }
