@@ -16,7 +16,7 @@ const Blurb = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".blurb-text",
-        start: "top center",
+        start: "top 60%",
         end: "center center",
         scrub: true
       }
@@ -28,7 +28,7 @@ const Blurb = () => {
   return (
     <section id="blurb" ref={blurbRef} className="mt-28">
         <div className="mx-auto flex w-full max-w-[96rem] justify-start px-6 2xl:px-6 mb-96">
-            <p className="blurb-text w-full lg:w-3/4 font-sf-pro text-5xl font-normal text-stone-900/15 leading-[1.25]">
+            <p className="blurb-text w-full lg:w-3/4 font-sf-pro text-5xl font-medium text-stone-900/15 leading-[1.25]">
               I'm a Chinese-Indonesian born and raised in Dallas-Fort Worth. I curate and execute ideas using software
               and technology as my medium to express them. I have an eye for the finest details and
               meticulously plan things out to deliver extraordinary results. Discovering the "why" and "how" of things in this world has
