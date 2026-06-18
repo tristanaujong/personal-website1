@@ -16,7 +16,7 @@ const Blurb = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".blurb-text",
-        start: "top 60%",
+        start: "top 80%",
         end: "center center",
         scrub: true
       }
@@ -26,7 +26,7 @@ const Blurb = () => {
   }, { scope: blurbRef });
 
   return (
-    <section id="blurb" ref={blurbRef} className="mt-28">
+    <section id="blurb" ref={blurbRef} className="mt-0">
         <div className="mx-auto flex w-full max-w-[96rem] justify-start px-6 2xl:px-6 mb-96">
             <p className="blurb-text w-full lg:w-3/4 font-sf-pro text-5xl font-medium text-stone-900/15 leading-[1.25]">
               I'm a Chinese-Indonesian born and raised in Dallas-Fort Worth. I curate and execute ideas using software
