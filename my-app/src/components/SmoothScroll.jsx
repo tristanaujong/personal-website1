@@ -10,7 +10,7 @@ const SmoothScroll = () => {
   useEffect(() => {
     const lenis = new Lenis({
       anchors: true,
-      lerp: 0.08,
+      lerp: 0.07,
       stopInertiaOnNavigate: true,
     });
 
