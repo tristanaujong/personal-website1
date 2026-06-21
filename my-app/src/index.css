@@ -84,7 +84,6 @@ body {
     width: 100%;
     background-color: oklch(97% 0.001 106.424);
     color: white;
-    scroll-behavior: smooth;
     overflow-x: clip;
 }
 

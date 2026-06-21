@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import heroPicture from './images/hero-picture.png'
-import arrowPicture from './images/arrow-down.png'
 import Tilt from "react-parallax-tilt";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
