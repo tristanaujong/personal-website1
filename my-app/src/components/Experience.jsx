@@ -9,7 +9,8 @@ const Experience = () => {
   const experienceRef = useRef(null);
 
   useGSAP(() => {
-    const split = SplitText.create(".experience-text", { type: "chars" });
+    const heading = experienceRef.current.querySelector(".experience-text");
+    const split = SplitText.create(heading, { type: "chars" });
 
     const experienceAnimation = gsap.from(split.chars, {
       opacity: 0,
@@ -20,19 +21,24 @@ const Experience = () => {
       ease: "back.out(1.7)"
     });
 
-    ScrollTrigger.create({
+    const playTrigger = ScrollTrigger.create({
       trigger: experienceRef.current,
       start: "top 75%",
       onEnter: () => experienceAnimation.restart(),
     });
 
-    ScrollTrigger.create({
-      trigger: ".experience-text",
+    const resetTrigger = ScrollTrigger.create({
+      trigger: heading,
       start: "top bottom",
       onLeaveBack: () => experienceAnimation.pause(0),
     });
 
-    return () => split.revert();
+    return () => {
+      playTrigger.kill();
+      resetTrigger.kill();
+      experienceAnimation.kill();
+      split.revert();
+    };
   }, { scope: experienceRef });
   return (
     <section id="experience" ref={experienceRef} className="flex min-h-dvh">

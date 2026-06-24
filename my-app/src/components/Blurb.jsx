@@ -16,7 +16,7 @@ const Blurb = () => {
       stagger: 0.1,
       scrollTrigger: {
         trigger: ".blurb-text",
-        start: "top 60%",
+        start: "top 75%",
         end: "center center",
         scrub: true
       }
@@ -32,8 +32,7 @@ const Blurb = () => {
               I'm a Chinese-Indonesian born and raised in Dallas-Fort Worth. I curate and execute ideas using software
               and technology as my medium to express them. I have an eye for the finest details and
               meticulously plan things out to deliver extraordinary results. Discovering the "why" and "how" of things in this world has
-              been a natural trait of my personality, and I will never stop doing that. Currently, I am a student
-              at Texas A&M obtaining a bachelor's in Computer Science with a minor in Statistics.
+              been a natural trait of my personality, and I will never stop doing that. 
             </p>
         </div>
     </section>
