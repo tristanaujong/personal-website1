@@ -96,7 +96,7 @@ const Experience = () => {
       description: "President | prev. VP | prev. Software Engineer Intern",
       img: taoLogo,
       year: "2024-Present",
-      hoverColor: "#510000",
+      hoverColor: "#000000",
       link: "https://engrtao.tech/",
     },
     {
