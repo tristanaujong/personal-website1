@@ -46,6 +46,7 @@ const Experience = () => {
         ease: "back.out(1.7)",
       }
     );
+    let cardAnimationIsArmed = true;
 
     const headingPlayTrigger = ScrollTrigger.create({
       trigger: experienceRef.current,
@@ -54,10 +55,29 @@ const Experience = () => {
     });
 
     const cardPlayTrigger = ScrollTrigger.create({
-      trigger: experienceRef.current,
-      start: "top 40%",
-      onEnter: () => cardAnimation.restart(),
+      trigger: cardGrid,
+      start: "top 70%",
+      onEnter: () => {
+        if (cardAnimationIsArmed) {
+          cardAnimationIsArmed = false;
+          cardAnimation.restart();
+        }
+      },
     });
+
+    const cardResetObserver = new IntersectionObserver(([entry]) => {
+      const isGridBelowViewport =
+        !entry.isIntersecting &&
+        entry.rootBounds &&
+        entry.boundingClientRect.top >= entry.rootBounds.bottom;
+
+      if (isGridBelowViewport) {
+        cardAnimation.pause(0);
+        cardAnimationIsArmed = true;
+      }
+    });
+
+    cardResetObserver.observe(cardGrid);
 
     const headingResetTrigger = ScrollTrigger.create({
       trigger: experienceRef.current,
@@ -65,17 +85,11 @@ const Experience = () => {
       onLeaveBack: () => experienceAnimation.pause(0),
     });
 
-    const cardResetTrigger = ScrollTrigger.create({
-      trigger: cardGrid,
-      start: "top bottom",
-      onLeaveBack: () => cardAnimation.pause(0),
-    });
-
     return () => {
       headingPlayTrigger.kill();
       cardPlayTrigger.kill();
       headingResetTrigger.kill();
-      cardResetTrigger.kill();
+      cardResetObserver.disconnect();
       experienceAnimation.kill();
       cardAnimation.kill();
       split.revert();
