@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import WideCard from "./WideCard";
-import lockheedLogo from "./images/LM_Logo.png";
+import dbmsguiCover from "./images/dbmsguicover.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
@@ -97,16 +97,44 @@ const Projects = () => {
     {
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
-        img: lockheedLogo,
+        img: dbmsguiCover,
         year: "2025 - 2026",
-        hoverColor: "#0f3b61"
+        hoverColor: "#510000"
+    },
+    {
+        title: "DBMS_GUI",
+        description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
+        img: dbmsguiCover,
+        year: "2025 - 2026",
+        hoverColor: "#510000"
+    },
+    {
+        title: "DBMS_GUI",
+        description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
+        img: dbmsguiCover,
+        year: "2025 - 2026",
+        hoverColor: "#510000"
+    },
+    {
+        title: "DBMS_GUI",
+        description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
+        img: dbmsguiCover,
+        year: "2025 - 2026",
+        hoverColor: "#510000"
+    },
+    {
+        title: "DBMS_GUI",
+        description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
+        img: dbmsguiCover,
+        year: "2025 - 2026",
+        hoverColor: "#510000"
     }
   ]
 
   return (
     <section id="projects" ref={projectsRef} className="flex min-h-dvh flex-col">
         <div className="mx-auto w-full max-w-[96rem] justify-start px-6 2xl:px-6 flex-row">
-            <h2 className="projects-text font-sf-pro font-bold text-8xl text-stone-900 mb-24 mx-auto">
+            <h2 className="projects-text font-sf-pro font-bold text-8xl text-stone-900 mb-16 mx-auto">
             MY PROJECTS
             </h2>
         </div>
