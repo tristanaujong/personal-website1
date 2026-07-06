@@ -140,7 +140,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" ref={experienceRef} className="flex min-h-dvh flex-col">
+    <section id="experience" ref={experienceRef} className="flex min-h-dvh flex-col scroll-mt-26">
       <div className="mx-auto w-full max-w-[96rem] justify-start px-6 2xl:px-6 flex-row">
         <h2 className="experience-text font-sf-pro font-bold text-8xl text-stone-900 mb-24 mx-auto">
           MY EXPERIENCE
