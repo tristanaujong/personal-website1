@@ -96,7 +96,7 @@ const Projects = () => {
 
   const cards = [
     {
-        id: "dbms-gui-1",
+        id: "dbms-gui",
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
@@ -104,35 +104,19 @@ const Projects = () => {
         hoverColor: "#510000"
     },
     {
-        id: "dbms-gui-2",
-        title: "DBMS_GUI",
+        id: "tomatoroll",
+        title: "TomatoRoll",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
-        year: "2025 - 2026",
+        year: "2026",
         hoverColor: "#510000"
     },
     {
-        id: "dbms-gui-3",
-        title: "DBMS_GUI",
+        id: "findayota",
+        title: "FindAYota",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
-        year: "2025 - 2026",
-        hoverColor: "#510000"
-    },
-    {
-        id: "dbms-gui-4",
-        title: "DBMS_GUI",
-        description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
-        img: dbmsguiCover,
-        year: "2025 - 2026",
-        hoverColor: "#510000"
-    },
-    {
-        id: "dbms-gui-5",
-        title: "DBMS_GUI",
-        description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
-        img: dbmsguiCover,
-        year: "2025 - 2026",
+        year: "2025",
         hoverColor: "#510000"
     }
   ]
