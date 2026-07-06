@@ -1,15 +1,16 @@
-import React from 'react'
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import WideCard from "./WideCard";
+import ProjectModal from "./ProjectModal";
 import dbmsguiCover from "./images/dbmsguicover.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 const Projects = () => {
   const projectsRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useGSAP(() => {
     const heading = projectsRef.current.querySelector(".projects-text");
@@ -95,6 +96,7 @@ const Projects = () => {
 
   const cards = [
     {
+        id: "dbms-gui-1",
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
@@ -102,6 +104,7 @@ const Projects = () => {
         hoverColor: "#510000"
     },
     {
+        id: "dbms-gui-2",
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
@@ -109,6 +112,7 @@ const Projects = () => {
         hoverColor: "#510000"
     },
     {
+        id: "dbms-gui-3",
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
@@ -116,6 +120,7 @@ const Projects = () => {
         hoverColor: "#510000"
     },
     {
+        id: "dbms-gui-4",
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
@@ -123,6 +128,7 @@ const Projects = () => {
         hoverColor: "#510000"
     },
     {
+        id: "dbms-gui-5",
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
@@ -140,17 +146,22 @@ const Projects = () => {
         </div>
         <div className="card-grid flex w-full flex-wrap justify-center gap-6 px-6">
         {cards.map((card) => (
-          <div key={card.title} className="projects-card">
+          <div key={card.id} className="projects-card">
             <WideCard
               title={card.title}
               description={card.description}
               img={card.img}
               year={card.year}
               hoverColor={card.hoverColor}
+              onClick={() => setSelectedProject(card)}
             />
           </div>
         ))}
       </div>
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   )
 }

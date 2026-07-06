@@ -1,11 +1,10 @@
-import React from "react";
-
 const WideCard = ({
   title,
   description,
   year,
   img,
   hoverColor = "#6b7280",
+  onClick,
 }) => {
   const cardClassName =
     "flex h-108 w-108 flex-col overflow-hidden rounded-xl bg-stone-400 p-6 text-center no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:bg-[var(--card-hover-color)] hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-4";
@@ -28,12 +27,14 @@ const WideCard = ({
   );
 
   return (
-    <div
+    <button
+      type="button"
+      onClick={onClick}
       className={cardClassName}
       style={{ "--card-hover-color": hoverColor }}
     >
       {cardContent}
-    </div>
+    </button>
   );
 };
 
