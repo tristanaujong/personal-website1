@@ -115,7 +115,7 @@ const Experience = () => {
     },
     {
       title: "TEXAS A&M",
-      description: "Computer Science Student",
+      description: "Computer Science Undergraduate",
       img: tamuLogo,
       year: "2023-Present",
       hoverColor: "#510000",

@@ -13,6 +13,7 @@ const SmoothScroll = () => {
       lerp: 0.07,
       stopInertiaOnNavigate: true,
     });
+    window.lenis = lenis;
 
     const unsubscribeScroll = lenis.on("scroll", ScrollTrigger.update);
     const updateLenis = (time) => {
@@ -27,6 +28,9 @@ const SmoothScroll = () => {
       unsubscribeScroll();
       gsap.ticker.remove(updateLenis);
       lenis.destroy();
+      if (window.lenis === lenis) {
+        delete window.lenis;
+      }
     };
   }, []);
 

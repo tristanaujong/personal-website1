@@ -5,6 +5,7 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import WideCard from "./WideCard";
 import ProjectModal from "./ProjectModal";
 import dbmsguiCover from "./images/dbmsguicover.png";
+import dbmsgui3 from "./images/dbmsgui3.jpg";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
@@ -100,6 +101,7 @@ const Projects = () => {
         title: "DBMS_GUI",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
+        images: [dbmsguiCover, dbmsgui3],
         year: "2025 - 2026",
         hoverColor: "#510000"
     },
@@ -108,6 +110,7 @@ const Projects = () => {
         title: "TomatoRoll",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
+        images: [dbmsguiCover],
         year: "2026",
         hoverColor: "#510000"
     },
@@ -116,7 +119,17 @@ const Projects = () => {
         title: "FindAYota",
         description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
         img: dbmsguiCover,
+        images: [dbmsguiCover],
         year: "2025",
+        hoverColor: "#510000"
+    },
+    {
+        id: "taowebsite",
+        title: "TAO Website",
+        description: "Developed and integrated a real-time vehicle interface monitoring app using C# and Avalonia, enabling live visualization of battery status, temperature, and system faults via CAN messages. ",
+        img: dbmsguiCover,
+        images: [dbmsguiCover],
+        year: "2024",
         hoverColor: "#510000"
     }
   ]
