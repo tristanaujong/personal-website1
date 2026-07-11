@@ -13,6 +13,12 @@ const ProjectModal = ({ project, onClose }) => {
 
   const hasMultipleImages = images.length > 1;
   const currentImage = images[activeImageIndex] ?? images[0];
+  const modalDescription =
+    project?.modalDescription ?? project?.details ?? project?.description ?? "";
+  const modalDescriptionParagraphs = modalDescription
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.replace(/\s*\n\s*/g, " ").trim())
+    .filter(Boolean);
 
   const goToPreviousImage = useCallback(() => {
     if (!hasMultipleImages) return;
@@ -150,14 +156,34 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
         )}
 
-        <h2 id="project-modal-title" className="text-4xl font-bold">
-          {project.title}
-        </h2>
+        <div className="flex items-start justify-between gap-6">
+          <div>
+            <h2 id="project-modal-title" className="text-4xl font-bold">
+              {project.title}
+            </h2>
 
-        <p className="mt-2 text-stone-500">{project.year}</p>
-        <p className="mt-10 pb-2 text-lg">
-          {project.details ?? project.description}
-        </p>
+            <p className="mt-2 text-stone-500">{project.year}</p>
+          </div>
+
+          {project.technologies?.length > 0 && (
+            <div className="flex shrink-0 items-center gap-3">
+              {project.technologies.map((technology) => (
+                <img
+                  key={technology.name}
+                  src={technology.img}
+                  alt={`${technology.name} logo`}
+                  title={technology.name}
+                  className="size-12 object-contain"
+                />
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="mt-10 space-y-5 pb-2 text-lg">
+          {modalDescriptionParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </div>
     </div>
   );
