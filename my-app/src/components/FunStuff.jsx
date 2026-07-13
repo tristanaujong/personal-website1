@@ -1,20 +1,20 @@
 const columns = [
   [
-    { height: "h-24", title: "Photo Wall", href: "#photo-wall" },
-    { height: "h-32", title: "Music", href: "#music" },
-    { height: "h-32", title: "Bookshelf", href: "#bookshelf" },
-    { height: "h-16", title: "Recipes", href: "#recipes" },
-    { height: "h-16", title: "Tiny Experiments", href: "#experiments" },
+    { height: "h-24", title: "My Car", href: "#my-car" },
+    { height: "h-32", title: "Boba", href: "#boba" },
+    { height: "h-32", title: "Device Spread", href: "#device-spread" },
+    { height: "h-16", title: "Cooking", href: "#cooking" },
+    { height: "h-16", title: "Favorite Artists", href: "#experiments" },
   ],
   [
-    { height: "h-32", title: "Travel Notes", href: "#travel-notes" },
-    { height: "h-40", title: "Favorite Tools", href: "#favorite-tools" },
-    { height: "h-56", title: "Sketchbook", href: "#sketchbook" },
+    { height: "h-32", title: "Gym", href: "#gym" },
+    { height: "h-40", title: "Places I Visited", href: "#places-i-visited" },
+    { height: "h-56", title: "Wishlist", href: "#wishlist" },
   ],
   [
-    { height: "h-64", title: "Game Corner", href: "#game-corner" },
-    { height: "h-32", title: "Watchlist", href: "#watchlist" },
-    { height: "h-32", title: "Random Ideas", href: "#random-ideas" },
+    { height: "h-64", title: "Diecast Collection", href: "#diecast-collection" },
+    { height: "h-32", title: "Favorite Games", href: "#favorite-games" },
+    { height: "h-32", title: "Fun Facts", href: "#fun-facts" },
   ],
 ];
 
