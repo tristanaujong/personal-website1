@@ -29,7 +29,7 @@ const Experience = () => {
     });
 
     const cardItems = gsap.utils.toArray(
-      experienceRef.current.querySelectorAll(".experience-card")
+      experienceRef.current.querySelectorAll(".experience-card, .experience-link")
     );
     const cardAnimation = gsap.fromTo(
       cardItems,
@@ -160,6 +160,14 @@ const Experience = () => {
           </div>
         ))}
       </div>
+      <a
+        href="https://drive.google.com/file/d/1QUMX2TyFpcrc3JXIXEOSlbby5SOgqo-v/view?usp=sharing"
+        target="_blank"
+        rel="noreferrer"
+        className="experience-link mt-10 text-center font-sf-pro text-xl font-normal text-stone-900 underline underline-offset-4 transition-colors duration-300 ease-out hover:text-stone-500"
+      >
+        My Resume
+      </a>
     </section>
   )
 }
