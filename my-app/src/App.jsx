@@ -7,6 +7,7 @@ import Blurb from './components/Blurb';
 import Experience from "./components/Experience";
 import SmoothScroll from "./components/SmoothScroll";
 import Projects from "./components/Projects";
+import FunStuff from "./components/FunStuff";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -19,6 +20,7 @@ const App = () => {
             <Blurb/>
             <Experience/>
             <Projects/>
+            <FunStuff/>
         </main>
     )
 }

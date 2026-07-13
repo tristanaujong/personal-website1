@@ -1,0 +1,51 @@
+const columns = [
+  [
+    { height: "h-24", title: "Photo Wall", href: "#photo-wall" },
+    { height: "h-32", title: "Music", href: "#music" },
+    { height: "h-32", title: "Bookshelf", href: "#bookshelf" },
+    { height: "h-16", title: "Recipes", href: "#recipes" },
+    { height: "h-16", title: "Tiny Experiments", href: "#experiments" },
+  ],
+  [
+    { height: "h-32", title: "Travel Notes", href: "#travel-notes" },
+    { height: "h-40", title: "Favorite Tools", href: "#favorite-tools" },
+    { height: "h-56", title: "Sketchbook", href: "#sketchbook" },
+  ],
+  [
+    { height: "h-64", title: "Game Corner", href: "#game-corner" },
+    { height: "h-32", title: "Watchlist", href: "#watchlist" },
+    { height: "h-32", title: "Random Ideas", href: "#random-ideas" },
+  ],
+];
+
+const FunStuff = () => {
+  return (
+    <section id="fun" className="min-h-dvh scroll-mt-26 px-6 py-24">
+      <div className="mx-auto w-full max-w-[96rem]">
+        <h2 className="font-sf-pro text-7xl font-bold text-stone-900 md:text-8xl">
+          FUN STUFF
+        </h2>
+
+        <div className="mt-16 flex flex-col gap-4 md:flex-row">
+          {columns.map((column, columnIndex) => (
+            <div className="flex-1" key={columnIndex}>
+              {column.map((card) => (
+                <a
+                  className={`${card.height} mb-4 flex rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 text-stone-900 transition-colors duration-300 hover:bg-neutral-200`}
+                  href={card.href}
+                  key={card.title}
+                >
+                  <span className="self-end font-sf-pro text-xl font-semibold">
+                    {card.title}
+                  </span>
+                </a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FunStuff;
