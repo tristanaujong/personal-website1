@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Navbar = () => {
+    const isHomePage = window.location.pathname === "/";
+
     useGSAP(() => {
         const navTween = gsap.timeline({
             scrollTrigger: {
@@ -24,14 +26,19 @@ const Navbar = () => {
     return (
         <nav>
             <div>
-                <a href="#home" className="flex items-center gap-2">
+                <a href="/" className="flex items-center gap-2">
                     <p className="font-sf-pro font-medium text-stone-900">TRISTAN'S WORLD.</p>
                 </a>
 
                 <ul>
                     {navLinks.map((link) => (
                         <li key={link.id}>
-                            <a href={`#${link.id}`} className="text-stone-900">{link.title}</a>
+                            <a
+                                href={link.href ?? `${isHomePage ? "" : "/"}#${link.id}`}
+                                className="text-stone-900"
+                            >
+                                {link.title}
+                            </a>
                         </li>
                     ))}
                 </ul>

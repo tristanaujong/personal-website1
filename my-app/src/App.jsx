@@ -12,6 +12,18 @@ import FunStuff from "./components/FunStuff";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
+    const isFunPage = window.location.pathname === "/fun";
+
+    if (isFunPage) {
+        return (
+            <main>
+                <SmoothScroll />
+                <Navbar />
+                <FunStuff />
+            </main>
+        )
+    }
+
     return (
         <main>
             <SmoothScroll />
@@ -20,7 +32,6 @@ const App = () => {
             <Blurb/>
             <Experience/>
             <Projects/>
-            <FunStuff/>
         </main>
     )
 }

@@ -1,20 +1,34 @@
+import myCarCover from "./images/my-car-cover.png";
+
 const columns = [
   [
-    { height: "h-24", title: "My Car", href: "#my-car" },
-    { height: "h-32", title: "Boba", href: "#boba" },
-    { height: "h-32", title: "Device Spread", href: "#device-spread" },
-    { height: "h-16", title: "Cooking", href: "#cooking" },
-    { height: "h-16", title: "Favorite Artists", href: "#experiments" },
+    {
+      height: "h-64",
+      title: "My Car",
+      href: "#my-car",
+      background: "bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600",
+      hoverBackground: "hover:bg-gradient-to-br hover:from-orange-200 hover:via-orange-300 hover:to-orange-400",
+      textColor: "text-stone-100",
+      image: myCarCover,
+      imageClass: "right-3 top-3 h-60 w-120",
+    },
+    { height: "h-32", title: "Diecast Collection", href: "#diecast-collection" },
+    { height: "h-16", title: "Cars I Have Driven", href: "#cooking" },
+    { height: "h-16", title: "My Ideal 2-Car Garage (with a twist)", href: "#two-car-garage" },
+    { height: "h-40", title: "Cool Cars I Spotted", href: "#test" },
   ],
   [
     { height: "h-32", title: "Gym", href: "#gym" },
     { height: "h-40", title: "Places I Visited", href: "#places-i-visited" },
-    { height: "h-56", title: "Wishlist", href: "#wishlist" },
+    { height: "h-28", title: "Wishlist", href: "#wishlist" },
+    { height: "h-28", title: "Device Spread", href: "#device-spread" },
   ],
   [
-    { height: "h-64", title: "Diecast Collection", href: "#diecast-collection" },
+    { height: "h-40", title: "Boba", href: "#boba" },
     { height: "h-32", title: "Favorite Games", href: "#favorite-games" },
-    { height: "h-32", title: "Fun Facts", href: "#fun-facts" },
+    { height: "h-40", title: "Fun Facts", href: "#fun-facts" },
+    { height: "h-16", title: "Cooking", href: "#cooking" },
+    { height: "h-32", title: "Favorite Artists", href: "#experiments" },
   ],
 ];
 
@@ -31,11 +45,28 @@ const FunStuff = () => {
             <div className="flex-1" key={columnIndex}>
               {column.map((card) => (
                 <a
-                  className={`${card.height} mb-4 flex rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 text-stone-900 transition-colors duration-300 hover:bg-neutral-200`}
+                  className={`${card.height} ${
+                    card.background ?? "bg-neutral-100"
+                  } ${
+                    card.hoverBackground ?? "hover:bg-neutral-200"
+                  } ${
+                    card.textColor ?? "text-stone-900"
+                  } relative mb-4 flex overflow-hidden rounded-xl border-2 border-slate-400/10 p-4 transition-colors duration-300`}
                   href={card.href}
                   key={card.title}
                 >
-                  <span className="self-end font-sf-pro text-xl font-semibold">
+                  {card.image && (
+                    <img
+                      src={card.image}
+                      alt=""
+                      aria-hidden="true"
+                      className={`pointer-events-none absolute object-contain opacity-90 ${
+                        card.imageClass ?? "right-3 top-3 h-24 w-24"
+                      }`}
+                    />
+                  )}
+
+                  <span className="relative z-10 self-end font-sf-pro text-xl font-semibold">
                     {card.title}
                   </span>
                 </a>
