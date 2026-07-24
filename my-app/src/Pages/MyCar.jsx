@@ -6,6 +6,11 @@ import BentoBackButton from "../components/BentoBackButton";
 import MyCar1 from "../components/images/MyCar1.jpg";
 import MyCar2 from "../components/images/MyCar2.jpg";
 import MyCar3 from "../components/images/MyCar3.jpg";
+import chessIcon from "../components/images/chess.png";
+import paintBrushIcon from "../components/images/paint-brush.png";
+import shiftIcon from "../components/images/shift.png";
+import turboEngineIcon from "../components/images/turbo-engine.png";
+import wrenchIcon from "../components/images/wrench.png";
 
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -25,6 +30,34 @@ const carImages = [
     src: MyCar3,
     alt: "2022 Honda Civic Si detail",
     className: "",
+  },
+];
+
+const carSpecs = [
+  {
+    metric: "Turbocharged",
+    measurement: "1.5L Inline-4",
+    icon: turboEngineIcon,
+  },
+  {
+    metric: "207",
+    measurement: "Horsepower",
+    icon: chessIcon,
+  },
+  {
+    metric: "195",
+    measurement: "lb-ft of Torque",
+    icon: wrenchIcon,
+  },
+  {
+    metric: "6-Speed",
+    measurement: "Manual Transmission",
+    icon: shiftIcon,
+  },
+  {
+    metric: "Blazing Orange Pearl",
+    measurement: "Paint Finish",
+    icon: paintBrushIcon,
   },
 ];
 
@@ -70,33 +103,66 @@ const MyCar = () => {
   );
 
   return (
-    <section
-      ref={pageRef}
-      className="flex h-dvh flex-col overflow-hidden px-6 pb-6 pt-24"
-    >
-      <div className="mx-auto flex h-[calc(100dvh-7.5rem)] min-h-0 w-full max-w-[96rem] flex-col">
-        <BentoBackButton />
+    <>
+      <section
+        ref={pageRef}
+        className="flex h-dvh flex-col overflow-hidden px-6 pb-6 pt-24"
+      >
+        <div className="mx-auto flex h-[calc(100dvh-7.5rem)] min-h-0 w-full max-w-[96rem] flex-col">
+          <BentoBackButton />
 
-        <h1 className="my-car-text mb-6 font-sf-pro text-5xl font-bold text-stone-900 md:text-7xl lg:text-7xl">
-          My Car: 2022 Honda Civic Si
-        </h1>
+          <h1 className="my-car-text mb-6 font-sf-pro text-5xl font-bold text-stone-900 md:text-7xl lg:text-7xl">
+            My Car: 2022 Honda Civic Si
+          </h1>
 
-        <div className="grid min-h-0 flex-1 grid-cols-1 gap-5 overflow-hidden md:grid-cols-2 md:grid-rows-2">
-          {carImages.map((image) => (
+          <div className="grid min-h-0 flex-1 grid-cols-1 gap-5 overflow-hidden md:grid-cols-2 md:grid-rows-2">
+            {carImages.map((image) => (
+              <div
+                className={`${image.className} overflow-hidden rounded-3xl bg-stone-200`}
+                key={image.alt}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 pb-24 pt-5">
+        <div className="mx-auto grid w-full max-w-[96rem] gap-4 md:grid-cols-5">
+          {carSpecs.map((spec) => (
             <div
-              className={`${image.className} overflow-hidden rounded-3xl bg-stone-200`}
-              key={image.alt}
+              className="flex min-h-28 items-center gap-4 rounded-2xl bg-stone-50 p-4"
+              key={`${spec.metric}-${spec.measurement}`}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="h-full w-full object-cover"
-              />
+              <div
+                className="flex size-12 shrink-0 items-center justify-center rounded-full bg-stone-200 p-3"
+                aria-hidden="true"
+              >
+                <img
+                  src={spec.icon}
+                  alt=""
+                  className="size-full object-contain"
+                />
+              </div>
+
+              <div className="min-w-0 text-left">
+                <p className="font-sf-pro text-xl font-bold leading-tight text-stone-900">
+                  {spec.metric}
+                </p>
+                <p className="mt-1 font-sf-pro text-sm font-medium text-stone-500">
+                  {spec.measurement}
+                </p>
+              </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
