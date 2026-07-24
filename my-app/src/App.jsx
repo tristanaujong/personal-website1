@@ -8,11 +8,23 @@ import Experience from "./components/Experience";
 import SmoothScroll from "./components/SmoothScroll";
 import Projects from "./components/Projects";
 import FunStuff from "./components/FunStuff";
+import MyCar from "./Pages/MyCar";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
     const isFunPage = window.location.pathname === "/fun";
+    const isMyCarPage = window.location.pathname === "/fun/my-car";
+
+    if (isMyCarPage) {
+        return (
+            <main>
+                <SmoothScroll />
+                <Navbar />
+                <MyCar />
+            </main>
+        )
+    }
 
     if (isFunPage) {
         return (

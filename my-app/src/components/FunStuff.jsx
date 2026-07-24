@@ -5,7 +5,7 @@ const columns = [
     {
       height: "h-64",
       title: "My Car",
-      href: "#my-car",
+      href: "/fun/my-car",
       background: "bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600",
       hoverBackground: "hover:bg-gradient-to-br hover:from-orange-200 hover:via-orange-300 hover:to-orange-400",
       textColor: "text-stone-100",
@@ -51,7 +51,7 @@ const FunStuff = () => {
                     card.hoverBackground ?? "hover:bg-neutral-200"
                   } ${
                     card.textColor ?? "text-stone-900"
-                  } relative mb-4 flex overflow-hidden rounded-xl border-2 border-slate-400/10 p-4 transition-colors duration-300`}
+                  } relative mb-4 flex overflow-hidden rounded-xl border-2 border-slate-400/10 bg-clip-padding p-4 transition-colors duration-300`}
                   href={card.href}
                   key={card.title}
                 >
