@@ -7,6 +7,14 @@ import MyCar1 from "../components/images/MyCar1.jpg";
 import MyCar2 from "../components/images/MyCar2.jpg";
 import MyCar3 from "../components/images/MyCar3.jpg";
 import MyCar4 from "../components/images/MyCar4.jpg";
+import MyCar5 from "../components/images/MyCar5.jpg";
+import MyCar6 from "../components/images/MyCar6.jpg";
+import MyCar7 from "../components/images/MyCar7.jpg";
+import MyCar10 from "../components/images/MyCar10.jpg";
+import MyCarMileage1 from "../components/images/MyCarMileage1.png";
+import MyCarMod1 from "../components/images/MyCarMod1.png";
+import MyCarMod2 from "../components/images/MyCarMod2.png";
+import gustsIcon from "../components/images/gusts.png";
 import chessIcon from "../components/images/chess.png";
 import paintBrushIcon from "../components/images/paint-brush.png";
 import shiftIcon from "../components/images/shift.png";
@@ -74,6 +82,40 @@ const funFacts = [
   {
     title: "Fun Fact #3",
     body: "While the regular Civic offers an automatic transmission, the Si only comes with a 6-speed manual. And this has been true for all 9 generations of the Si!",
+  },
+];
+
+const carMods = [
+  {
+    title: "Mod #1",
+    name: "27WON Hybrid Cold Air Intake",
+    image: MyCarMod1,
+    imageClassName: "h-full w-full object-contain",
+  },
+  {
+    title: "Mod #2",
+    name: "IKON Motorsports RS Front Lip",
+    image: MyCarMod2,
+    imageClassName: "h-full w-full object-contain scale-90",
+  },
+];
+
+const detailImages = [
+  {
+    src: MyCar5,
+    alt: "2022 Honda Civic Si rear angle",
+  },
+  {
+    src: MyCar6,
+    alt: "2022 Honda Civic Si interior view",
+  },
+  {
+    src: MyCar7,
+    alt: "2022 Honda Civic Si detail view",
+  },
+  {
+    src: MyCar10,
+    alt: "2022 Honda Civic Si close-up view",
   },
 ];
 
@@ -179,7 +221,7 @@ const MyCar = () => {
         </div>
       </section>
 
-      <section className="px-6 pb-24 pt-5">
+      <section className="px-6 pb-5 pt-5">
         <div className="mx-auto grid w-full max-w-[96rem] gap-5 md:grid-cols-3">
           {funFacts.map((fact) => (
             <article
@@ -197,6 +239,61 @@ const MyCar = () => {
         </div>
       </section>
 
+      <section className="px-6 pb-5">
+        <div className="mx-auto grid w-full max-w-[96rem] gap-5 md:grid-cols-2">
+          {carMods.map((mod) => (
+            <article
+              className="flex min-h-28 items-center gap-4 rounded-2xl bg-stone-50 p-4"
+              key={mod.title}
+            >
+              <div className="h-20 w-28 shrink-0 overflow-hidden rounded-xl">
+                <img
+                  src={mod.image}
+                  alt=""
+                  className={mod.imageClassName}
+                />
+              </div>
+
+              <div className="min-w-0 text-left">
+                <h2 className="font-sf-pro text-xl font-bold leading-tight text-stone-900">
+                  {mod.title}
+                </h2>
+                <p className="mt-1 font-sf-pro text-base font-medium text-stone-500">
+                  {mod.name}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-6 pb-24">
+        <div className="mx-auto w-full max-w-[96rem]">
+          <article className="grid min-h-28 grid-cols-[1fr_auto_1fr] items-center gap-4 rounded-2xl bg-stone-50 px-8 py-4 md:px-12">
+            <p className="font-sf-pro text-3xl font-bold leading-tight text-stone-900 md:text-5xl">
+              ODOMETER
+            </p>
+
+            <div className="flex items-center justify-center gap-0">
+              <img
+                src={MyCarMileage1}
+                alt=""
+                className="h-20 max-w-48 object-contain"
+              />
+              <img
+                src={gustsIcon}
+                alt=""
+                className="h-12 w-12 object-contain"
+              />
+            </div>
+
+            <p className="text-right font-sf-pro text-3xl font-bold leading-tight text-stone-900 md:text-5xl">
+              49,121 <span className="text-xl md:text-3xl">miles</span>
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="px-6 pb-24">
         <div className="mx-auto grid w-full max-w-[96rem] gap-5 md:grid-cols-2">
           <div className="flex min-h-96 items-center rounded-3xl bg-stone-50 p-6 md:p-10">
@@ -206,8 +303,7 @@ const MyCar = () => {
               my favorite part of the car, as you simply don't see this
               color Si that much in the wild. The car looks great, the 
               powertrain is fun, the gearbox is sublime, and it just works
-              as a daily driver. It seats 5, has Apple CarPlay, a Bose sound system,
-              and I can sit in the front bucket seats all day comfortably. From casual
+              as a daily driver. From casual
               highway drives to spirited backroad touge, this car can do it all.
             </p>
           </div>
@@ -219,6 +315,23 @@ const MyCar = () => {
               className="h-full w-full object-cover"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="px-6 pb-24">
+        <div className="mx-auto grid h-[70dvh] min-h-96 w-full max-w-[96rem] grid-cols-4 gap-5">
+          {detailImages.map((image) => (
+            <div
+              className="h-full w-full overflow-hidden rounded-3xl bg-stone-200"
+              key={image.alt}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       </section>
     </>

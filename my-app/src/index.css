@@ -70,11 +70,19 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: "DS Digital";
+    src: url("/fonts/ds-digital/DS-DIGIT.TTF") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
 @theme {
     --color-yellow: #e7d393;
     --color-white-100: #efefef;
     --font-sans: "Mona Sans", sans-serif;
     --font-sf-pro: "SF Pro Display", sans-serif;
+    --font-ds-digital: "DS Digital", monospace;
     --font-modern-negra: "Modern Negra", sans-serif;
     --font-serif: "DM Serif Text", serif;
 }
