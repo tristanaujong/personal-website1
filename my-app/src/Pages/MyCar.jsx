@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
@@ -14,6 +14,10 @@ import MyCar10 from "../components/images/MyCar10.jpg";
 import MyCarMileage1 from "../components/images/MyCarMileage1.png";
 import MyCarMod1 from "../components/images/MyCarMod1.png";
 import MyCarMod2 from "../components/images/MyCarMod2.png";
+import MyCarPlace1 from "../components/images/MyCarPlace1.jpg";
+import MyCarPlace2 from "../components/images/MyCarPlace2.jpg";
+import MyCarPlace3 from "../components/images/MyCarPlace3.jpg";
+import MyCarPlace4 from "../components/images/MyCarPlace4.jpg";
 import gustsIcon from "../components/images/gusts.png";
 import chessIcon from "../components/images/chess.png";
 import paintBrushIcon from "../components/images/paint-brush.png";
@@ -119,8 +123,95 @@ const detailImages = [
   },
 ];
 
+const carPlaces = [
+  {
+    src: MyCarPlace1,
+    location: "Tail of the Dragon, NC",
+  },
+  {
+    src: MyCarPlace2,
+    location: "College Station, TX",
+  },
+  {
+    src: MyCarPlace3,
+    location: "Talimena National Scenic Byway, OK",
+  },
+  {
+    src: MyCarPlace4,
+    location: "Broken Bow, OK",
+  },
+];
+
 const MyCar = () => {
   const pageRef = useRef(null);
+  const placesViewportRef = useRef(null);
+  const placeIsAnimatingRef = useRef(false);
+  const [currentPlaceIndex, setCurrentPlaceIndex] = useState(carPlaces.length);
+  const [placeSlideOffset, setPlaceSlideOffset] = useState(0);
+  const [placeSlideInset, setPlaceSlideInset] = useState(0);
+  const [placeTransitionEnabled, setPlaceTransitionEnabled] = useState(true);
+
+  const loopingPlaces = [...carPlaces, ...carPlaces, ...carPlaces];
+
+  useEffect(() => {
+    const viewport = placesViewportRef.current;
+
+    if (!viewport) {
+      return undefined;
+    }
+
+    const updatePlaceSlideOffset = () => {
+      const slides = viewport.querySelectorAll("article");
+
+      if (slides.length > 1) {
+        setPlaceSlideOffset(slides[1].offsetLeft - slides[0].offsetLeft);
+        setPlaceSlideInset(
+          Math.max(0, (viewport.clientWidth - slides[0].offsetWidth) / 2)
+        );
+      }
+    };
+
+    updatePlaceSlideOffset();
+    window.addEventListener("resize", updatePlaceSlideOffset);
+
+    return () => {
+      window.removeEventListener("resize", updatePlaceSlideOffset);
+    };
+  }, []);
+
+  const scrollPlaces = (direction) => {
+    if (placeIsAnimatingRef.current) {
+      return;
+    }
+
+    placeIsAnimatingRef.current = true;
+    setPlaceTransitionEnabled(true);
+    setCurrentPlaceIndex((index) => index + direction);
+  };
+
+  const handlePlaceTransitionEnd = () => {
+    if (currentPlaceIndex < carPlaces.length) {
+      setPlaceTransitionEnabled(false);
+      setCurrentPlaceIndex((index) => index + carPlaces.length);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setPlaceTransitionEnabled(true);
+          placeIsAnimatingRef.current = false;
+        });
+      });
+    } else if (currentPlaceIndex >= carPlaces.length * 2) {
+      setPlaceTransitionEnabled(false);
+      setCurrentPlaceIndex((index) => index - carPlaces.length);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setPlaceTransitionEnabled(true);
+          placeIsAnimatingRef.current = false;
+        });
+      });
+    } else {
+      placeIsAnimatingRef.current = false;
+    }
+  };
 
   useGSAP(
     () => {
@@ -332,6 +423,73 @@ const MyCar = () => {
               />
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="flex min-h-dvh items-center px-6 py-6">
+        <div className="mx-auto w-full max-w-[96rem]">
+          <h2 className="mb-6 font-sf-pro text-4xl font-bold text-stone-900 md:text-6xl">
+            Exploring the U.S.
+          </h2>
+
+          <div
+            ref={placesViewportRef}
+            className="group relative mx-auto h-[calc(100dvh-12rem)] max-h-[34rem] w-full overflow-hidden rounded-3xl"
+          >
+            <div
+              className={`flex h-full gap-5 ${
+                placeTransitionEnabled
+                  ? "transition-transform duration-500 ease-out"
+                  : ""
+              }`}
+              onTransitionEnd={handlePlaceTransitionEnd}
+              style={{
+                transform: `translateX(${
+                  placeSlideInset - currentPlaceIndex * placeSlideOffset
+                }px)`,
+              }}
+            >
+              {loopingPlaces.map((place, index) => (
+                <article
+                  className="relative aspect-[16/9] h-full shrink-0 overflow-hidden rounded-3xl bg-stone-200"
+                  key={`${place.location}-${index}`}
+                >
+                  <img
+                    src={place.src}
+                    alt={`2022 Honda Civic Si at ${place.location}`}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                    <p className="font-sf-pro text-2xl font-bold text-white md:text-4xl">
+                      {place.location}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              aria-label="Previous place"
+              onClick={() => scrollPlaces(-1)}
+              className="group/arrow absolute inset-y-0 left-0 flex w-24 cursor-pointer items-center justify-start bg-gradient-to-r from-white/80 to-transparent pl-5 opacity-0 transition-opacity duration-200 hover:from-white group-hover:opacity-100"
+            >
+              <span className="flex size-12 items-center justify-center rounded-full bg-white/90 font-sf-pro text-4xl font-bold leading-none text-stone-900 shadow-lg transition-transform duration-200 group-hover/arrow:scale-110 group-hover/arrow:bg-white">
+                ‹
+              </span>
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next place"
+              onClick={() => scrollPlaces(1)}
+              className="group/arrow absolute inset-y-0 right-0 flex w-24 cursor-pointer items-center justify-end bg-gradient-to-l from-white/80 to-transparent pr-5 opacity-0 transition-opacity duration-200 hover:from-white group-hover:opacity-100"
+            >
+              <span className="flex size-12 items-center justify-center rounded-full bg-white/90 font-sf-pro text-4xl font-bold leading-none text-stone-900 shadow-lg transition-transform duration-200 group-hover/arrow:scale-110 group-hover/arrow:bg-white">
+                ›
+              </span>
+            </button>
+          </div>
         </div>
       </section>
     </>

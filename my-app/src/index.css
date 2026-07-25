@@ -130,6 +130,14 @@ body {
     mask-size: 50%;
 }
 
+@utility no-scrollbar {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 @layer components {
     main {
         @apply relative w-full overflow-x-clip;
