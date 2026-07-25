@@ -6,6 +6,7 @@ import BentoBackButton from "../components/BentoBackButton";
 import MyCar1 from "../components/images/MyCar1.jpg";
 import MyCar2 from "../components/images/MyCar2.jpg";
 import MyCar3 from "../components/images/MyCar3.jpg";
+import MyCar4 from "../components/images/MyCar4.jpg";
 import chessIcon from "../components/images/chess.png";
 import paintBrushIcon from "../components/images/paint-brush.png";
 import shiftIcon from "../components/images/shift.png";
@@ -58,6 +59,21 @@ const carSpecs = [
     metric: "Blazing Orange Pearl",
     measurement: "Paint Finish",
     icon: paintBrushIcon,
+  },
+];
+
+const funFacts = [
+  {
+    title: "Fun Fact #1",
+    body: "The Blazing Orange Pearl paint color only exists on the 2022 model year Si. Not sure why Honda decided to discontinue the best color after only a year.",
+  },
+  {
+    title: "Fun Fact #2",
+    body: "The 'Si' lettering stands for \"Sport Injected\", which represents Honda's formula for sharpening up a commuter car with desirable performance upgrades.",
+  },
+  {
+    title: "Fun Fact #3",
+    body: "While the regular Civic offers an automatic transmission, the Si only comes with a 6-speed manual. And this has been true for all 9 generations of the Si!",
   },
 ];
 
@@ -132,7 +148,7 @@ const MyCar = () => {
         </div>
       </section>
 
-      <section className="px-6 pb-24 pt-5">
+      <section className="px-6 pt-5">
         <div className="mx-auto grid w-full max-w-[96rem] gap-4 md:grid-cols-5">
           {carSpecs.map((spec) => (
             <div
@@ -160,6 +176,49 @@ const MyCar = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="px-6 pb-24 pt-5">
+        <div className="mx-auto grid w-full max-w-[96rem] gap-5 md:grid-cols-3">
+          {funFacts.map((fact) => (
+            <article
+              className="flex min-h-52 flex-col justify-between rounded-3xl bg-stone-50 p-6"
+              key={fact.title}
+            >
+              <h2 className="font-sf-pro text-2xl font-bold text-stone-900">
+                {fact.title}
+              </h2>
+              <p className="mt-6 font-sf-pro text-lg font-medium leading-relaxed text-stone-600">
+                {fact.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-6 pb-24">
+        <div className="mx-auto grid w-full max-w-[96rem] gap-5 md:grid-cols-2">
+          <div className="flex min-h-96 items-center rounded-3xl bg-stone-50 p-6 md:p-10">
+            <p className="font-sf-pro text-2xl font-medium leading-relaxed text-stone-900 md:text-3xl">
+              I just love my Si. It's a perfect daily driver for me and has
+              not skipped a beat since day one. The unique orange color is 
+              my favorite part of the car, as you simply don't see this
+              color Si that much in the wild. The car looks great, the 
+              powertrain is fun, the gearbox is sublime, and it just works
+              as a daily driver. It seats 5, has Apple CarPlay, a Bose sound system,
+              and I can sit in the front bucket seats all day comfortably. From casual
+              highway drives to spirited backroad touge, this car can do it all.
+            </p>
+          </div>
+
+          <div className="h-[70dvh] min-h-96 overflow-hidden rounded-3xl bg-stone-200">
+            <img
+              src={MyCar4}
+              alt="2022 Honda Civic Si parked outside"
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </section>
     </>
