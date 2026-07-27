@@ -23,6 +23,7 @@ import MyCarPlace6 from "../components/images/MyCarPlace6.jpg";
 import MyCarPlace7 from "../components/images/MyCarPlace7.jpg";
 import MyCarPlace8 from "../components/images/MyCarPlace8.jpg";
 import MyCarPlace9 from "../components/images/MyCarPlace9.jpg";
+import MyCarPlace10 from "../components/images/MyCarPlace10.jpg";
 import gustsIcon from "../components/images/gusts.png";
 import chessIcon from "../components/images/chess.png";
 import paintBrushIcon from "../components/images/paint-brush.png";
@@ -156,6 +157,10 @@ const carPlaces = [
   {
     src: MyCarPlace7,
     location: "Memphis, TN",
+  },
+  {
+    src: MyCarPlace10,
+    location: "Paris, TX",
   },
   {
     src: MyCarPlace8,
