@@ -7,10 +7,10 @@ import MyCar1 from "../components/images/MyCar1.jpg";
 import MyCar2 from "../components/images/MyCar2.jpg";
 import MyCar3 from "../components/images/MyCar3.jpg";
 import MyCar4 from "../components/images/MyCar4.jpg";
-import MyCar5 from "../components/images/MyCar5.jpg";
-import MyCar6 from "../components/images/MyCar6.jpg";
-import MyCar7 from "../components/images/MyCar7.jpg";
-import MyCar10 from "../components/images/MyCar10.jpg";
+import MyCar11 from "../components/images/MyCar11.jpg";
+import MyCar15 from "../components/images/MyCar15.jpg";
+import MyCar13 from "../components/images/MyCar13.jpg";
+import MyCar14 from "../components/images/MyCar14.jpg";
 import MyCarMileage1 from "../components/images/MyCarMileage1.png";
 import MyCarMod1 from "../components/images/MyCarMod1.png";
 import MyCarMod2 from "../components/images/MyCarMod2.png";
@@ -106,19 +106,19 @@ const carMods = [
 
 const detailImages = [
   {
-    src: MyCar5,
+    src: MyCar11,
     alt: "2022 Honda Civic Si rear angle",
   },
   {
-    src: MyCar6,
+    src: MyCar15,
     alt: "2022 Honda Civic Si interior view",
   },
   {
-    src: MyCar7,
+    src: MyCar13,
     alt: "2022 Honda Civic Si detail view",
   },
   {
-    src: MyCar10,
+    src: MyCar14,
     alt: "2022 Honda Civic Si close-up view",
   },
 ];
@@ -379,7 +379,7 @@ const MyCar = () => {
             </div>
 
             <p className="text-right font-sf-pro text-3xl font-bold leading-tight text-stone-900 md:text-5xl">
-              49,121 <span className="text-xl md:text-3xl">miles</span>
+              49,204 <span className="text-xl md:text-3xl">miles</span>
             </p>
           </article>
         </div>
