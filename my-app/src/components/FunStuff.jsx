@@ -5,7 +5,7 @@ const columns = [
     {
       height: "h-64",
       title: "My Car",
-      href: "/fun/my-car",
+      href: "#/fun/my-car",
       background: "bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600",
       hoverBackground: "hover:bg-gradient-to-br hover:from-orange-200 hover:via-orange-300 hover:to-orange-400",
       textColor: "text-stone-100",

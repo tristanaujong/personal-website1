@@ -76,7 +76,7 @@ const Hero = () => {
                         Turning curiosity into elements of fruition by trusting the process.
                     </h2>
                     <p className="shrink-0 text-sm font-thin italic text-stone-900 md:text-base">
-                        v.1.1
+                        v.1.1.1
                     </p>
                 </div>
                 <div className="hero-icons-wrapper flex gap-4 mt-6 text-stone-900">

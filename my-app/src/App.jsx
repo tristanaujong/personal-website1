@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {ScrollTrigger, SplitText } from "gsap/all"; 
 import gsap from 'gsap';
 
@@ -12,9 +13,30 @@ import MyCar from "./Pages/MyCar";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+const getCurrentRoute = () => {
+    const hashRoute = window.location.hash.replace(/^#/, "");
+
+    return hashRoute || window.location.pathname;
+};
+
 const App = () => {
-    const isFunPage = window.location.pathname === "/fun";
-    const isMyCarPage = window.location.pathname === "/fun/my-car";
+    const [currentRoute, setCurrentRoute] = useState(getCurrentRoute);
+    const isFunPage = currentRoute === "/fun";
+    const isMyCarPage = currentRoute === "/fun/my-car";
+
+    useEffect(() => {
+        const updateCurrentRoute = () => {
+            setCurrentRoute(getCurrentRoute());
+        };
+
+        window.addEventListener("hashchange", updateCurrentRoute);
+        window.addEventListener("popstate", updateCurrentRoute);
+
+        return () => {
+            window.removeEventListener("hashchange", updateCurrentRoute);
+            window.removeEventListener("popstate", updateCurrentRoute);
+        };
+    }, []);
 
     if (isMyCarPage) {
         return (
