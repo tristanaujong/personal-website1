@@ -71,9 +71,14 @@ const Hero = () => {
                 <h1 className="hero-title-line -mt-[clamp(0.5rem,1vw,1rem)] whitespace-nowrap font-sf-pro text-[clamp(4.5rem,20vw,13.6rem)] font-bold leading-none">
                     AUJONG
                 </h1>
-                <h2 className="hero-title-line font-sf-pro text-m md:text-xl">
-                    Turning curiosity into elements of fruition by trusting the process.
-                </h2>
+                <div className="hero-title-line flex w-full items-end justify-between gap-4 font-sf-pro">
+                    <h2 className="text-m md:text-xl">
+                        Turning curiosity into elements of fruition by trusting the process.
+                    </h2>
+                    <p className="shrink-0 text-sm font-thin italic text-stone-900 md:text-base">
+                        v.1.1
+                    </p>
+                </div>
                 <div className="hero-icons-wrapper flex gap-4 mt-6 text-stone-900">
                     <a
                     href="https://www.linkedin.com/in/tristan-lee-aujong/"

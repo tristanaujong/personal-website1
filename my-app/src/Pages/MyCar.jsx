@@ -18,6 +18,11 @@ import MyCarPlace1 from "../components/images/MyCarPlace1.jpg";
 import MyCarPlace2 from "../components/images/MyCarPlace2.jpg";
 import MyCarPlace3 from "../components/images/MyCarPlace3.jpg";
 import MyCarPlace4 from "../components/images/MyCarPlace4.jpg";
+import MyCarPlace5 from "../components/images/MyCarPlace5.jpg";
+import MyCarPlace6 from "../components/images/MyCarPlace6.jpg";
+import MyCarPlace7 from "../components/images/MyCarPlace7.jpg";
+import MyCarPlace8 from "../components/images/MyCarPlace8.jpg";
+import MyCarPlace9 from "../components/images/MyCarPlace9.jpg";
 import gustsIcon from "../components/images/gusts.png";
 import chessIcon from "../components/images/chess.png";
 import paintBrushIcon from "../components/images/paint-brush.png";
@@ -139,6 +144,26 @@ const carPlaces = [
   {
     src: MyCarPlace4,
     location: "Broken Bow, OK",
+  },
+  {
+    src: MyCarPlace5,
+    location: "Asheville, NC",
+  },
+  {
+    src: MyCarPlace6,
+    location: "Nashville, TN",
+  },
+  {
+    src: MyCarPlace7,
+    location: "Memphis, TN",
+  },
+  {
+    src: MyCarPlace8,
+    location: "Houston, TX",
+  },
+  {
+    src: MyCarPlace9,
+    location: "Austin, TX",
   },
 ];
 
@@ -410,19 +435,25 @@ const MyCar = () => {
       </section>
 
       <section className="px-6 pb-24">
-        <div className="mx-auto grid h-[70dvh] min-h-96 w-full max-w-[96rem] grid-cols-4 gap-5">
-          {detailImages.map((image) => (
-            <div
-              className="h-full w-full overflow-hidden rounded-3xl bg-stone-200"
-              key={image.alt}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
+        <div className="mx-auto w-full max-w-[96rem]">
+          <h2 className="mb-6 font-sf-pro text-4xl font-bold text-stone-900 md:text-6xl">
+            It's In The Details.
+          </h2>
+
+          <div className="grid h-[70dvh] min-h-96 grid-cols-4 gap-5">
+            {detailImages.map((image) => (
+              <div
+                className="h-full w-full overflow-hidden rounded-3xl bg-stone-200"
+                key={image.alt}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
