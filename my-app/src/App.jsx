@@ -10,6 +10,7 @@ import SmoothScroll from "./components/SmoothScroll";
 import Projects from "./components/Projects";
 import FunStuff from "./components/FunStuff";
 import MyCar from "./Pages/MyCar";
+import SpottedCars from "./Pages/SpottedCars";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -23,6 +24,7 @@ const App = () => {
     const [currentRoute, setCurrentRoute] = useState(getCurrentRoute);
     const isFunPage = currentRoute === "/fun";
     const isMyCarPage = currentRoute === "/fun/my-car";
+    const isSpottedCarsPage = currentRoute === "/fun/spotted-cars";
 
     useEffect(() => {
         const updateCurrentRoute = () => {
@@ -38,12 +40,12 @@ const App = () => {
         };
     }, []);
 
-    if (isMyCarPage) {
+    if (isMyCarPage || isSpottedCarsPage) {
         return (
             <main>
                 <SmoothScroll />
                 <Navbar />
-                <MyCar />
+                {isSpottedCarsPage ? <SpottedCars /> : <MyCar />}
             </main>
         )
     }
