@@ -1,0 +1,312 @@
+.two-car-garage-page {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100dvh;
+  background: linear-gradient(
+    180deg,
+    var(--garage-background-start, #d9d9d9) 0%,
+    var(--garage-background-end, #737372) 100%
+  );
+}
+
+.two-car-garage-page > nav {
+  position: relative;
+  background: transparent;
+}
+
+.two-car-garage-page > nav::before {
+  display: none;
+}
+
+.two-car-garage-page > .garage-budget {
+  height: 100%;
+  min-height: 0;
+  background: transparent;
+}
+
+.garage-budget {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100dvh;
+  container-type: size;
+  overflow: clip;
+  color: var(--garage-text, #fff);
+  background: linear-gradient(
+    180deg,
+    var(--garage-background-start, #d9d9d9) 0%,
+    var(--garage-background-end, #737372) 100%
+  );
+  font-family: "SF Pro Display", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.garage-budget__stage {
+  /* Use spare screen width without increasing the height-fitted element sizes. */
+  --garage-spread: max(0px, calc((100vw - 100cqw) / 4 - 1vw));
+  position: relative;
+  isolation: isolate;
+  /* Fit the complete mockup inside the space available below the header. */
+  width: min(100%, calc(100cqh * 3428 / 2008));
+  aspect-ratio: 3428 / 2008;
+  container-type: inline-size;
+}
+
+.garage-budget__intro {
+  position: absolute;
+  z-index: 3;
+  top: 1.7%;
+  right: calc(4.5% - var(--garage-spread));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+  width: 44cqw;
+  text-align: right;
+}
+
+.garage-budget__title {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: clamp(0.9rem, 1.6cqw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.garage-budget__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.garage-budget__back:hover {
+  opacity: 0.65;
+}
+
+.garage-budget__back:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 6px;
+}
+
+.garage-budget__heading {
+  position: absolute;
+  z-index: 0;
+  top: 1.7%;
+  left: calc(6% - var(--garage-spread));
+  margin: 0;
+  font-size: 14.5cqw;
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+}
+
+.garage-budget__heading span {
+  display: block;
+}
+
+.garage-car {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+}
+
+.garage-car--left {
+  top: 40.2%;
+  left: calc(3% - var(--garage-spread));
+  width: 50%;
+}
+
+.garage-car--right {
+  top: 24.1%;
+  left: calc(52.5% + var(--garage-spread));
+  width: 46.2%;
+}
+
+.garage-car__visual {
+  position: relative;
+  isolation: isolate;
+  transform: scale(1.05);
+  transform-origin: left bottom;
+}
+
+.garage-car--right .garage-car__visual {
+  transform-origin: right bottom;
+}
+
+.garage-car__visual::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 8%;
+  bottom: 10%;
+  left: 9%;
+  height: 8%;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 65%);
+  filter: blur(0.65cqw);
+}
+
+.garage-car__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.garage-car__caption {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+}
+
+.garage-car--left .garage-car__caption {
+  margin-top: -1.6cqw;
+  padding-left: 4.8cqw;
+}
+
+.garage-car--right .garage-car__caption {
+  margin-top: -0.4cqw;
+  padding-left: 4.15cqw;
+}
+
+.garage-car__wordmark {
+  display: block;
+  flex: 0 0 auto;
+  width: 10.4cqw;
+  height: auto;
+}
+
+.garage-car--right .garage-car__wordmark {
+  width: 13.1cqw;
+}
+
+.garage-car__details h2 {
+  margin: 0;
+  font-size: 2.78cqw;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.garage-car__details p {
+  margin: 0.25cqw 0 0;
+  font-size: 1.9cqw;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+.garage-budget__description {
+  position: absolute;
+  z-index: 2;
+  top: 76.1%;
+  left: calc(55.2% + var(--garage-spread));
+  width: 39%;
+  margin: 0;
+  font-size: 1.42cqw;
+  font-weight: 400;
+  line-height: 1.34;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 1023px) and (orientation: portrait) {
+  .garage-budget__stage {
+    display: grid;
+    grid-template-rows: minmax(0, 0.75fr) repeat(2, minmax(0, 1fr)) auto;
+    gap: min(1.5cqh, 0.75rem);
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: clamp(2.5rem, 5cqh, 4rem) 6% clamp(1rem, 3cqh, 2rem);
+  }
+
+  .garage-budget__intro {
+    top: 1.5rem;
+    right: 6%;
+    gap: 0.4rem;
+    width: 50cqw;
+  }
+
+  .garage-budget__title {
+    font-size: clamp(0.75rem, 3.2cqw, 0.95rem);
+  }
+
+  .garage-budget__back {
+    font-size: 0.7rem;
+  }
+
+  .garage-budget__heading {
+    position: relative;
+    top: auto;
+    left: auto;
+    align-self: center;
+    font-size: min(18cqw, 8cqh);
+    line-height: 0.93;
+  }
+
+  .garage-car {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .garage-car__visual {
+    min-height: 0;
+  }
+
+  .garage-car__visual,
+  .garage-car--right .garage-car__visual {
+    transform-origin: center bottom;
+  }
+
+  .garage-car__image {
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .garage-car--left .garage-car__caption,
+  .garage-car--right .garage-car__caption {
+    gap: 3cqw;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .garage-car__wordmark,
+  .garage-car--right .garage-car__wordmark {
+    width: 20cqw;
+  }
+
+  .garage-car__details h2 {
+    font-size: 4.8cqw;
+  }
+
+  .garage-car__details p {
+    margin-top: 0.6cqw;
+    font-size: 3.5cqw;
+  }
+
+  .garage-budget__description {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 0;
+    font-size: clamp(0.8rem, 3.8cqw, 1rem);
+    line-height: 1.35;
+  }
+}

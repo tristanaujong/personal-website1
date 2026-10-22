@@ -14,7 +14,7 @@ const columns = [
     },
     { height: "h-32", title: "Diecast Collection", href: "#diecast-collection" },
     { height: "h-16", title: "Cars I Have Driven", href: "#cooking" },
-    { height: "h-16", title: "My Ideal 2-Car Garage (with a twist)", href: "#two-car-garage" },
+    { height: "h-16", title: "My Ideal 2-Car Garage (with a twist)", href: "#/fun/two-car-garage" },
     { height: "h-40", title: "Cool Cars I Have Spotted", href: "#/fun/spotted-cars" },
   ],
   [
