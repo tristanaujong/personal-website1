@@ -1,0 +1,886 @@
+{
+  "researchedOn": "2026-11-14",
+  "currency": "USD",
+  "cars": {
+    "evolution-v": {
+      "amount": 34203,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/mitsubishi/lancer-evolution/evolution-v/?listing_status=forsale&page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Evolution V (1998–1999)",
+      "notes": "Includes GSR and RS; exact GSR-only average unavailable."
+    },
+    "wrx-sti": {
+      "amount": 29121,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/subaru/impreza/2nd-gen/wrx-sti/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Second-generation WRX STi (2001–2007)",
+      "notes": "Includes market and facelift variants."
+    },
+    "kona-n": {
+      "amount": 23279.25,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        22165,
+        23010,
+        21944,
+        25998
+      ],
+      "sampleSize": 4,
+      "sourceUrl": "https://www.carfax.com/Used-Hyundai-Kona-N_w10162",
+      "sourceName": "CARFAX",
+      "scope": "U.S. listings",
+      "comparable": "Kona N (2022–2023)",
+      "notes": "Four visible, priced Kona N listings; duplicate display prices counted once."
+    },
+    "accord": {
+      "amount": 17271.058823529413,
+      "method": "sample-listing-average",
+      "sourceUrl": "https://www.cargurus.com/Cars/t-Used-Honda-Accord-Coupe-Touring-t59701",
+      "sourceName": "CarGurus",
+      "scope": "U.S. listings",
+      "comparable": "Accord Coupe Touring (2016–2017)",
+      "notes": "17 priced Touring listings from the initial results block. Repeated copies of the same results and unpriced entries excluded; varied mileage/history retained.",
+      "samplePrices": [
+        17906,
+        17019,
+        19898,
+        19945,
+        19000,
+        18073,
+        19587,
+        8189,
+        11190,
+        17422,
+        6570,
+        17775,
+        20995,
+        20949,
+        18988,
+        19985,
+        20117
+      ],
+      "sampleSize": 17
+    },
+    "350z-nismo": {
+      "amount": 24288,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/nissan/z-car/350z/nismo/?listing_status=forsale&page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "350Z NISMO (2007–2008)",
+      "notes": ""
+    },
+    "gr-corolla": {
+      "amount": 40397.375,
+      "method": "sample-listing-average",
+      "sourceUrl": "https://www.cargurus.com/Cars/t-Used-Toyota-GR-Corolla-Circuit-Edition-AWD-t105106",
+      "sourceName": "CarGurus",
+      "scope": "U.S. listings",
+      "comparable": "GR Corolla Circuit Edition (2023–2024)",
+      "notes": "24 priced Circuit Edition listings in the initial result block; repeated copies of the result block excluded.",
+      "samplePrices": [
+        39622,
+        37258,
+        41156,
+        40258,
+        41495,
+        41799,
+        39240,
+        38998,
+        36294,
+        40240,
+        40996,
+        42203,
+        43677,
+        40999,
+        43287,
+        41185,
+        39969,
+        38377,
+        39494,
+        39998,
+        38998,
+        41998,
+        38998,
+        42998
+      ],
+      "sampleSize": 24
+    },
+    "ss": {
+      "amount": 40275,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/chevrolet/ss/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Chevrolet SS (2014–2017)",
+      "notes": ""
+    },
+    "ram-srt10": {
+      "amount": 43640,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/dodge/ram/3rd-gen/srt-10?listing_status=sold&page=1&pubDate=20251202",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Ram SRT-10 (2004–2006)",
+      "notes": "Includes regular and Quad Cab; regular-cab-only average unavailable."
+    },
+    "integra": {
+      "amount": 48165,
+      "method": "reported-listing-average",
+      "sampleSize": 166,
+      "sourceUrl": "https://visor.vin/research/used-car-prices/acura/integra/type-s",
+      "sourceName": "Visor",
+      "scope": "U.S. dealer listings",
+      "comparable": "Integra Type S (2024–2026)",
+      "notes": "166 used and certified listings, as of November 14, 2026."
+    },
+    "m2": {
+      "amount": 38028,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/bmw/2-series/f22/m2/base-model?status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Base F87 M2 (2016–2018)",
+      "notes": ""
+    },
+    "m3": {
+      "amount": 54095,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/bmw/3-series/e90/m3/zcp-coupe-manual/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "E92 M3 Competition Package coupe, manual (2010–2013)",
+      "notes": "Manual-transmission submarket; excludes non-ZCP cars."
+    },
+    "gt350": {
+      "amount": 78983.33333333333,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        89850,
+        71500,
+        75600
+      ],
+      "sampleSize": 3,
+      "sourceUrl": "https://bringatrailer.com/listing/2020-ford-mustang-shelby-gt350-85/",
+      "sourceName": "Bring a Trailer / duPont REGISTRY",
+      "scope": "U.S. sales",
+      "comparable": "2020 GT350 Heritage Edition",
+      "notes": "Three 2026 Heritage Edition results. BaT hammer prices and duPont buyer-premium-inclusive result are mixed; fees not normalized.",
+      "additionalSources": [
+        "https://bringatrailer.com/listing/2020-ford-mustang-shelby-gt350-86/",
+        "https://live.dupontregistry.com/auction/2020-ford-mustangshelbygt3508kmilesheritageedition-1814"
+      ]
+    },
+    "z06-c6": {
+      "amount": 47865,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/chevrolet/corvette/c6/z06/base-model?listing_status=forsale&page=1&status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "C6 Z06 base model (2006–2013)",
+      "notes": ""
+    },
+    "ioniq5n": {
+      "amount": 48248.6,
+      "method": "reported-listing-average",
+      "sourceUrl": "https://www.cargurus.com/Cars/t-Used-Hyundai-IONIQ-5-N-AWD-t110594",
+      "sourceName": "CarGurus",
+      "scope": "U.S. listings",
+      "comparable": "Ioniq 5 N (2025–2026)",
+      "notes": "Published model-specific average, 21 listings reported."
+    },
+    "rcf": {
+      "amount": 48133,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        70590,
+        45995,
+        46999,
+        39995,
+        34999,
+        50220
+      ],
+      "sampleSize": 6,
+      "sourceUrl": "https://www.edmunds.com/used-lexus-rc-f-denver-co/",
+      "sourceName": "Edmunds",
+      "scope": "U.S. listings",
+      "comparable": "RC F, same generation (2015–2025)",
+      "notes": "Six priced U.S. search results; model-year and mileage mix."
+    },
+    "m5-e39": {
+      "amount": 38764,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/bmw/5-series/e39/m5?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "E39 M5 (1999–2003)",
+      "notes": ""
+    },
+    "z06-c7": {
+      "amount": 77425,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/chevrolet/corvette/c7/z06/base-model?page=1&status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "C7 Z06 base model (2015–2019)",
+      "notes": ""
+    },
+    "fpace": {
+      "amount": 55809.6,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        66183,
+        44306,
+        53315,
+        66000,
+        49244
+      ],
+      "sampleSize": 5,
+      "sourceUrl": "https://www.carfax.com/Used-Jaguar-F-Pace-SVR_t14410",
+      "sourceName": "CARFAX",
+      "scope": "U.S. listings",
+      "comparable": "F-Pace SVR (2019–2025)",
+      "notes": "Five visible SVR listing prices; includes facelift model years."
+    },
+    "trackhawk": {
+      "amount": 89157,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/jeep/grand-cherokee/wk2/trackhawk/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "WK2 Trackhawk (2018–2021)",
+      "notes": ""
+    },
+    "ct6v": {
+      "amount": 54690,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        59328,
+        55474,
+        49199,
+        47950,
+        61499
+      ],
+      "sampleSize": 5,
+      "sourceUrl": "https://www.edmunds.com/used-cadillac-ct6-v-sedan/",
+      "sourceName": "Edmunds",
+      "scope": "U.S. listings",
+      "comparable": "CT6-V Blackwing (2019–2020)",
+      "notes": "Five priced results; excludes the explicitly rebuilt-title $44,895 listing."
+    },
+    "testarossa": {
+      "amount": 167570,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/ferrari/testarossa?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Testarossa (1984–1992)",
+      "notes": ""
+    },
+    "cayman-gt4": {
+      "amount": 120161,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/porsche/718/cayman/gt4/manual/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "718 Cayman GT4, manual (2020–2023)",
+      "notes": ""
+    },
+    "m5-f90": {
+      "amount": 54382,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/bmw/5-series/g30/m5/base-model?page=3&pubDate=20250425&status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Base F90 M5 (2018–2023)",
+      "notes": "Excludes Competition and CS."
+    },
+    "c63-black": {
+      "amount": 135395,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/mercedes-benz/c/w204/coupe/c-63-amg-black-series/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "C204 C63 AMG Black Series (2012–2014)",
+      "notes": "Base Black Series proxy; Performance Studio Edition premium not isolated."
+    },
+    "emira": {
+      "amount": 87218,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/lotus/emira/first-edition/v6/?page=5",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Emira V6 First Edition (2022–2025)",
+      "notes": ""
+    },
+    "viper-acr": {
+      "amount": 282624,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/dodge/viper/5th-gen/acr?listing_status=forsale&status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "VX I Viper ACR (2016–2017)",
+      "notes": ""
+    },
+    "nismo400r": {
+      "amount": 887750,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        857500,
+        918000
+      ],
+      "sampleSize": 2,
+      "sourceUrl": "https://www.classic.com/m/nissan/skyline/r33/gt-r/nismo-400r/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. sales",
+      "comparable": "NISMO 400R (1996–1998)",
+      "notes": "Two public 2026 U.S. auction results; a very small sample."
+    },
+    "ftype": {
+      "amount": 63836,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/jaguar/f-type/1st-gen/svr?status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "F-Type SVR (2017–2020)",
+      "notes": "Includes coupe and convertible SVR; coupe-only mean unavailable."
+    },
+    "escaladev": {
+      "amount": 138761,
+      "method": "reported-listing-average",
+      "sampleSize": 416,
+      "sourceUrl": "https://visor.vin/research/used-car-prices/cadillac/escalade/v-series",
+      "sourceName": "Visor",
+      "scope": "U.S. dealer listings",
+      "comparable": "Escalade V-Series, standard wheelbase (2023–2026)",
+      "notes": "416 used/certified dealer listings; excludes ESV."
+    },
+    "fordgt": {
+      "amount": 452257,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/ford/gt/1st-gen/base-model/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "First-generation Ford GT base (2005–2006)",
+      "notes": "Excludes Heritage Edition."
+    },
+    "r8-v10": {
+      "amount": 110745,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/audi/r8/type-42/v10/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Type 42 R8 V10 coupe (2009–2015)",
+      "notes": "Includes transmission and facelift variants."
+    },
+    "gt3-touring": {
+      "amount": 320232.2,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        489888,
+        255266,
+        315000,
+        264996,
+        276011
+      ],
+      "sampleSize": 5,
+      "sourceUrl": "https://www.classic.com/m/porsche/911/992/9921/gt3/touring-manual/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. listings",
+      "comparable": "992.1 GT3 Touring, manual (2021–2024)",
+      "notes": "Five priced manual Touring listings; all asks retained, including unusually high $489,888 ask."
+    },
+    "gallardo": {
+      "amount": 101832,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/lamborghini/gallardo/base-model/?listing_status=forsale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Original Gallardo base coupe (2004–2008)",
+      "notes": ""
+    },
+    "r8-performance": {
+      "amount": 220026.66666666666,
+      "method": "sample-listing-average",
+      "sourceUrl": "https://www.cargurus.com/Cars/l-Used-2020-Audi-R8-quattro-V10-Performance-Coupe-AWD-t84795",
+      "sourceName": "CarGurus",
+      "scope": "U.S. listings",
+      "comparable": "Type 4S R8 V10 Performance quattro coupe (2020–2024)",
+      "notes": "21 priced 2020 quattro V10 Performance Coupe listings in initial results; duplicates from repeated results excluded. High $435,489 ask retained; not a RWD/Spyder/model-wide average.",
+      "samplePrices": [
+        206389,
+        207212,
+        214389,
+        226389,
+        180353,
+        200353,
+        215900,
+        198140,
+        212570,
+        190779,
+        225075,
+        181696,
+        217790,
+        229999,
+        250988,
+        187886,
+        149390,
+        435489,
+        209888,
+        239886,
+        239999
+      ],
+      "sampleSize": 21
+    },
+    "sls-black": {
+      "amount": 719538,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/mercedes-benz/sls/black-series/?page=1",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "SLS AMG Black Series (2014)",
+      "notes": ""
+    },
+    "458-speciale": {
+      "amount": 1370967.142857143,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        1280995,
+        1431685,
+        1399995,
+        1396062,
+        1347273,
+        1401685,
+        1339075
+      ],
+      "sampleSize": 7,
+      "sourceUrl": "https://www.classic.com/m/ferrari/458/speciale/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. listings",
+      "comparable": "458 Speciale coupe (2014–2016)",
+      "notes": "Seven visible U.S. asking prices, not Speciale A roadsters."
+    },
+    "dbs": {
+      "amount": 239317,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        299990,
+        234995,
+        269900,
+        209900,
+        181800
+      ],
+      "sampleSize": 5,
+      "sourceUrl": "https://www.classic.com/m/aston-martin/dbs/3rd-gen/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. listings",
+      "comparable": "DBS Superleggera (2019–2022)",
+      "notes": "Five priced DBS results; excludes the explicitly named 770 Ultimate."
+    },
+    "f12": {
+      "amount": 248868,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/ferrari/f12/berlinetta?status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "F12berlinetta (2013–2017)",
+      "notes": "Published mean of recorded F12berlinetta sales."
+    },
+    "675lt": {
+      "amount": 394947.5,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        409995,
+        379900
+      ],
+      "sampleSize": 2,
+      "sourceUrl": "https://www.classic.com/m/mclaren/675lt/base/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. listings",
+      "comparable": "675LT coupe (2015–2018)",
+      "notes": "Two current U.S. coupe asks; excludes Spider and non-U.S. sales."
+    },
+    "lfa": {
+      "amount": 822783,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/lexus/lfa/base-model/?page=1&pubDate=20250628",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "LFA base model (2011–2012)",
+      "notes": "Excludes Nürburgring Package."
+    },
+    "599gto": {
+      "amount": 2166292.3333333335,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        1998982,
+        2499995,
+        1999900
+      ],
+      "sampleSize": 3,
+      "sourceUrl": "https://www.classic.com/m/ferrari/599/gto/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. listings",
+      "comparable": "599 GTO (2010–2012)",
+      "notes": "Three current priced U.S. GTO asks; not the 599 GTB."
+    },
+    "murcielago-sv": {
+      "amount": 1023429,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/lamborghini/murcielago/lp670-4-sv?status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "Murciélago LP670-4 SV (2009–2010)",
+      "notes": ""
+    },
+    "p1": {
+      "amount": 1704570,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/mclaren/p1/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "P1 road car (2014–2015)",
+      "notes": ""
+    },
+    "laferrari": {
+      "amount": 4295810,
+      "method": "reported-sale-average",
+      "sourceUrl": "https://www.classic.com/m/ferrari/laferrari/coupe?status=for_sale",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global recorded sales",
+      "comparable": "LaFerrari coupe (2013–2016)",
+      "notes": "Excludes Aperta."
+    },
+    "bacalar": {
+      "amount": 876875,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        876875
+      ],
+      "sampleSize": 1,
+      "sourceUrl": "https://www.classic.com/m/bentley/bacalar/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "Global sales",
+      "comparable": "Bentley Bacalar (2021–2023)",
+      "notes": "Single public sale in Abu Dhabi, December 5, 2025; insufficient sales for a broad market average.",
+      "period": "Dec 2025"
+    },
+    "silvia-qs": {
+      "amount": 11250,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        11250
+      ],
+      "sampleSize": 1,
+      "sourceUrl": "https://bringatrailer.com/listing/1990-nissan-silvia-3/",
+      "sourceName": "Bring a Trailer",
+      "scope": "U.S. sales",
+      "comparable": "S13 Silvia Q’s, CA18DE",
+      "notes": "Single exact-trim U.S. auction result, November 8, 2024. Too few verified Q’s comparables for a representative market mean.",
+      "period": "Nov 2024"
+    },
+    "chaser": {
+      "amount": 21500,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        21500
+      ],
+      "sampleSize": 1,
+      "sourceUrl": "https://bringatrailer.com/listing/1998-toyota-chaser/",
+      "sourceName": "Bring a Trailer",
+      "scope": "U.S. sales",
+      "comparable": "JZX100 Chaser Tourer V",
+      "notes": "Single modified Tourer V manual sale on August 25, 2026; Limited package premium not isolated.",
+      "period": "Aug 2026"
+    },
+    "s2000": {
+      "amount": 32247,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        29495,
+        34999
+      ],
+      "sampleSize": 2,
+      "sourceUrl": "https://texasjdm.com/products/new-vehicle-71",
+      "sourceName": "Texas JDM / JDM Supply",
+      "scope": "U.S. dealer listings",
+      "comparable": "1999 Japan-market S2000 AP1, 2.0L F20C",
+      "notes": "Mean of two distinct U.S.-located 1999 JDM imports: Texas JDM stock 12667 (79,873 miles), $29,495; Kuruma Imports/JDM Supply VIN AP1-1004817 (90,658 miles), $34,999. Both retain F20C engines. Small asking-price sample, not completed sales. Excludes AP2/CR, overseas stock, heavily modified cars, and a sold listing whose final transaction price is unknown.",
+      "period": "2026 research snapshot",
+      "additionalSources": [
+        "https://jdmsupply.com/sale/AZ6JJl/1999-honda-s2000"
+      ]
+    },
+    "challenger": {
+      "amount": 24631,
+      "method": "reported-listing-average",
+      "sampleSize": 191,
+      "sourceUrl": "https://visor.vin/research/used-car-prices/dodge/challenger/srt8",
+      "sourceName": "Visor",
+      "scope": "U.S. dealer listings",
+      "comparable": "Challenger SRT8",
+      "notes": "191 used/certified SRT8 dealer listings; reported trim average."
+    },
+    "supra": {
+      "amount": 151263.5,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        99900,
+        120212,
+        164947,
+        219995
+      ],
+      "sampleSize": 4,
+      "sourceUrl": "https://www.classic.com/m/toyota/supra/4th-gen/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. listings",
+      "comparable": "US/Canada-spec A80 Supra Turbo (1993–1998)",
+      "notes": "Four priced U.S. Turbo listings; excludes JDM SZ, SZ-R, RZ and non-turbo cars.",
+      "period": "2026 listings"
+    },
+    "mx5": {
+      "amount": 28896,
+      "method": "reported-listing-average",
+      "sourceUrl": "https://www.cars.com/shopping/mazda-mx_5_miata-2023-club/",
+      "sourceName": "Cars.com",
+      "scope": "U.S. listings",
+      "comparable": "2023 Mazda MX-5 Miata Club soft-top, six-speed manual",
+      "notes": "Published nationwide used listing mean for the pictured 2023 Club soft-top. Excludes RF and non-Club trims. Source checked November 14, 2026; no currency conversion.",
+      "period": "2026 research snapshot"
+    },
+    "gt500": {
+      "amount": 59508,
+      "method": "reported-listing-average",
+      "sourceUrl": "https://www.cars.com/shopping/ford-shelby_gt500-2013/",
+      "sourceName": "Cars.com",
+      "scope": "U.S. listings",
+      "comparable": "2013 Shelby GT500",
+      "notes": "Nationwide published mean for the pictured 2013 model year, not the earlier 5.4L GT500."
+    },
+    "is500": {
+      "amount": 65696.6,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        69000,
+        55988,
+        65199,
+        66298,
+        71998
+      ],
+      "sampleSize": 5,
+      "sourceUrl": "https://www.edmunds.com/used-lexus-is-500-new-york-ny/",
+      "sourceName": "Edmunds",
+      "scope": "U.S. listings",
+      "comparable": "IS 500 F Sport Performance (2022–2026)",
+      "notes": "Five priced IS 500 listings returned for New York; includes Premium equipment variants.",
+      "period": "2026 listings"
+    },
+    "m56s": {
+      "amount": 17750,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        17750
+      ],
+      "sampleSize": 1,
+      "sourceUrl": "https://bringatrailer.com/listing/2011-infiniti-m-2/",
+      "sourceName": "Bring a Trailer",
+      "scope": "U.S. sales",
+      "comparable": "M56 with Sport Touring Package (2011)",
+      "notes": "One 39k-mile exact Sport Touring Package example sold March 26, 2025; too few comparable Sport-package records for a representative market mean.",
+      "period": "Mar 2025"
+    },
+    "rs5": {
+      "amount": 27133.8,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        20359,
+        20745,
+        21855,
+        28594,
+        22495,
+        33900,
+        37799,
+        27713,
+        26595,
+        26393,
+        22995,
+        24245,
+        27950,
+        23912,
+        29875,
+        28878,
+        20989,
+        30405,
+        32994,
+        33985
+      ],
+      "sampleSize": 20,
+      "sourceUrl": "https://www.carfax.com/Research/Audi/RS5/2013",
+      "sourceName": "CARFAX",
+      "scope": "U.S. listings",
+      "comparable": "B8.5 RS5 (2013–2014)",
+      "notes": "Twenty displayed 2013–2014 RS5 asks, with mixed mileage and history; no trade-in values or original MSRP used.",
+      "period": "2026 listings"
+    },
+    "lc500": {
+      "amount": 88000,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        88000
+      ],
+      "sampleSize": 1,
+      "sourceUrl": "https://www.classic.com/a/barrett-jackson-scottsdale-fall-2025-kpd6xBn/lots/2019-lexus-lc500-inspiration-series-Wj1GjJn",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. sales",
+      "comparable": "2019 Flare Yellow LC500 Inspiration Series",
+      "notes": "One exact-series sale, Scottsdale, October 15, 2025. Newer Inspiration Series and convertible results are excluded.",
+      "period": "Oct 2025"
+    },
+    "zr1": {
+      "amount": 138930.83333333334,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        127995,
+        139900,
+        139900,
+        142900,
+        139900,
+        142990
+      ],
+      "sampleSize": 6,
+      "sourceUrl": "https://www.classic.com/m/chevrolet/corvette/c6/zr-1/",
+      "sourceName": "CLASSIC.COM",
+      "scope": "U.S. listings",
+      "comparable": "C6 ZR1 (2009–2013)",
+      "notes": "Six U.S. ZR1 asks; the second Lewisville 2010 entry was excluded as a potential duplicate.",
+      "period": "Nov 2026 listings"
+    },
+    "range-svr": {
+      "amount": 40392,
+      "method": "reported-listing-average",
+      "sourceUrl": "https://www.autotrader.com/cars-for-sale/land-rover/range-rover-sport/svr?searchRadius=0",
+      "sourceName": "Autotrader",
+      "scope": "U.S. dealer listings",
+      "comparable": "2018 Range Rover Sport SVR",
+      "notes": "Published nationwide model-year/trim average for the facelift specification pictured."
+    },
+    "gls63": {
+      "amount": 87435.33333333333,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        71998,
+        88989,
+        96572,
+        72898,
+        90160,
+        103995
+      ],
+      "sampleSize": 6,
+      "sourceUrl": "https://www.truecar.com/used-cars-for-sale/listings/mercedes-benz/gls/location-new-york-ny/?bodyStyleSlug=suv&trim=amg-gls-63",
+      "sourceName": "TrueCar",
+      "scope": "U.S. listings",
+      "comparable": "X167 AMG GLS63 (2021–2026)",
+      "notes": "Six 2022–2024 4MATIC+ listings; older X166/2019 example excluded. Regional search includes nationwide delivery inventory; transport costs excluded.",
+      "period": "2026 listings"
+    },
+    "diablo-gtr": {
+      "amount": 770833.3333333333,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        770833.3333333333
+      ],
+      "sampleSize": 1,
+      "sourceUrl": "https://bhauction.com/data/img/news/190526/2025.1.12_Results_SCA.pdf",
+      "sourceName": "BINGO / BH Auction",
+      "scope": "Japan sales, converted to USD",
+      "comparable": "2000 Diablo GTR, track-only",
+      "notes": "One January 12, 2025 BINGO result: ¥122,100,000 including 10% buyer premium. Converted at Bank of Japan January 10, 2025 central rate ¥158.40/USD. The January 2026 unsold car is excluded.",
+      "period": "Jan 2025",
+      "originalCurrency": "JPY",
+      "originalPrices": [
+        122100000
+      ],
+      "usdPerCurrencyUnit": 0.006313131313131313,
+      "fxSource": "https://www.boj.or.jp/statistics/market/forex/fxdaily/fxlist/fx250110.pdf"
+    },
+    "aventador-s": {
+      "amount": 510738.0909090909,
+      "method": "sample-listing-average",
+      "samplePrices": [
+        370790,
+        459997,
+        479997,
+        489900,
+        499991,
+        499996,
+        499999,
+        525700,
+        588678,
+        599995,
+        603076
+      ],
+      "sampleSize": 11,
+      "sourceUrl": "https://driveindex.com/cars/lamborghini/aventador-s-coupe/for-sale",
+      "sourceName": "DriveIndex",
+      "scope": "U.S. listings",
+      "comparable": "Aventador S coupe (2017–2021)",
+      "notes": "Eleven priced U.S. coupe listings in source snapshot through November 3, 2026. Canadian ask excluded; anomalous one-mile $150,479 entry excluded as non-comparable.",
+      "period": "Nov 2026 listings"
+    },
+    "mc12": {
+      "amount": 3157000,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        9460000,
+        1430000,
+        1732500,
+        2090000,
+        1072500
+      ],
+      "sampleSize": 5,
+      "sourceUrl": "https://driveindex.com/cars/maserati/mc12/auction-results",
+      "sourceName": "DriveIndex",
+      "scope": "USD-denominated sales",
+      "comparable": "MC12 Stradale (2004–2005)",
+      "notes": "Five publicly priced USD auction records, 2006–2026; two EUR-denominated records excluded. Wide historical period and May 2026 record sale make this a limited historical sample, not a current quote.",
+      "period": "2006–2026"
+    },
+    "agera-r": {
+      "amount": 1181569,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        1006888,
+        1356250
+      ],
+      "sampleSize": 2,
+      "sourceUrl": "https://driveshifty.com/cars/koenigsegg/agera",
+      "sourceName": "Shifty / RM Sotheby’s",
+      "scope": "Global sales",
+      "comparable": "Agera R (2011–2014)",
+      "notes": "Two exact R results, September 2021 and November 2019. Excludes the $3.38m 2016 RSR and the base Agera. Old, tiny sample; no reliable recent exact-R public average.",
+      "period": "2019–2021",
+      "additionalSources": [
+        "https://rmsothebys.com/auctions/ad19/lots/r0035-2014-koenigsegg-agera-r/"
+      ]
+    },
+    "veyron": {
+      "amount": 2697500,
+      "method": "sample-sale-average",
+      "samplePrices": [
+        3305000,
+        2090000
+      ],
+      "sampleSize": 2,
+      "sourceUrl": "https://driveshifty.com/cars/bugatti/veyron/sold",
+      "sourceName": "Shifty",
+      "scope": "U.S. sales",
+      "comparable": "Veyron Grand Sport (2010–2015)",
+      "notes": "Two U.S. Grand Sport results (August 2026 and January 2017); excludes Vitesse, Super Sport and fixed-roof 16.4.",
+      "period": "2017 & 2026"
+    }
+  }
+}

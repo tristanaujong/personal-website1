@@ -1,18 +1,75 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "./GarageBudgetScene.css";
 
 gsap.registerPlugin(useGSAP);
 
-const GarageBudgetScene = ({ scene }) => {
+const GarageBudgetScene = ({ scene, previousBudget, nextBudget, onNavigate }) => {
   const sceneRef = useRef(null);
+  const entranceRef = useRef(null);
+  const transitioningRef = useRef(true);
+  const pendingDirectionRef = useRef(null);
+  const focusDirectionRef = useRef(null);
+  const previousArrowRef = useRef(null);
+  const nextArrowRef = useRef(null);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  useEffect(() => {
+    if (isTransitioning || focusDirectionRef.current === null) return;
+
+    const preferredArrow = focusDirectionRef.current < 0
+      ? previousArrowRef.current
+      : nextArrowRef.current;
+    (preferredArrow ?? previousArrowRef.current ?? nextArrowRef.current)
+      ?.focus({ preventScroll: true });
+    focusDirectionRef.current = null;
+  }, [isTransitioning]);
+
+  const navigate = (direction) => {
+    const budget = direction < 0 ? previousBudget : nextBudget;
+    if (!budget || transitioningRef.current) return;
+
+    transitioningRef.current = true;
+    setIsTransitioning(true);
+    focusDirectionRef.current = direction;
+
+    if (entranceRef.current) {
+      pendingDirectionRef.current = direction;
+      entranceRef.current.reverse();
+    } else {
+      // Reduced motion switches content immediately.
+      onNavigate(direction);
+    }
+  };
 
   useGSAP(
     () => {
       const media = gsap.matchMedia();
 
-      media.add("(prefers-reduced-motion: no-preference)", () => {
+      const finishEntrance = () => {
+        transitioningRef.current = false;
+        setIsTransitioning(false);
+      };
+
+      media.add({
+        animate: "(prefers-reduced-motion: no-preference)",
+        reduce: "(prefers-reduced-motion: reduce)",
+      }, (context) => {
+        if (!context.conditions.animate) {
+          // Also finish a pending switch if the preference changes mid-exit.
+          const direction = pendingDirectionRef.current;
+          pendingDirectionRef.current = null;
+          if (direction !== null) {
+            onNavigate(direction);
+          } else {
+            finishEntrance();
+          }
+          return;
+        }
+
+        transitioningRef.current = true;
+        setIsTransitioning(true);
         const animatedElements = gsap.utils.toArray(
           ".garage-budget__heading, .garage-budget__title, .garage-car, .garage-budget__description, .garage-budget__back",
         );
@@ -21,25 +78,32 @@ const GarageBudgetScene = ({ scene }) => {
 
         const entrance = gsap.timeline({
           paused: true,
-          defaults: { ease: "power3.out", force3D: true, lazy: false },
+          defaults: { duration: 0.6, ease: "power3.out", force3D: true, lazy: false },
           onComplete: () => {
-            gsap.set(animatedElements, { clearProps: "willChange,transform" });
+            // Keep transforms intact so this exact timeline can play backward.
+            gsap.set(animatedElements, { clearProps: "willChange" });
+            finishEntrance();
+          },
+          onReverseComplete: () => {
+            const direction = pendingDirectionRef.current;
+            pendingDirectionRef.current = null;
+            if (direction !== null) onNavigate(direction);
           },
         });
+        entranceRef.current = entrance;
 
+        // Match both timing and duration so every part also reverses together.
         entrance
-          .from(".garage-budget__heading", {
-            autoAlpha: 0,
-            x: "110vw",
-            duration: 1,
-            ease: "power3.out",
-          })
+          .from(
+            ".garage-budget__heading",
+            { autoAlpha: 0, x: "110vw" },
+            0,
+          )
           .from(
             ".garage-budget__title",
-            { autoAlpha: 0, x: 36, y: -12, duration: 0.65 },
-            0.2,
+            { autoAlpha: 0, x: 36, y: -12 },
+            0,
           )
-          .addLabel("cars", 0.7)
           .from(
             ".garage-car--left",
             {
@@ -48,9 +112,8 @@ const GarageBudgetScene = ({ scene }) => {
               y: 48,
               rotation: -9,
               transformOrigin: "center bottom",
-              duration: 1.3,
             },
-            "cars",
+            0,
           )
           .from(
             ".garage-car--right",
@@ -60,14 +123,13 @@ const GarageBudgetScene = ({ scene }) => {
               y: 48,
               rotation: 9,
               transformOrigin: "center bottom",
-              duration: 1.3,
             },
-            "cars",
+            0,
           )
           .from(
             ".garage-budget__description",
-            { autoAlpha: 0, y: "100vh", rotation: 2, duration: 0.9 },
-            "cars+=0.65",
+            { autoAlpha: 0, y: "100vh", rotation: 2 },
+            0,
           )
           .fromTo(
             ".garage-budget__back",
@@ -75,10 +137,8 @@ const GarageBudgetScene = ({ scene }) => {
             {
               autoAlpha: 1,
               y: 0,
-              duration: 0.5,
-              clearProps: "opacity,visibility,transform",
             },
-            "cars+=0.9",
+            0,
           );
 
         let cancelled = false;
@@ -110,7 +170,7 @@ const GarageBudgetScene = ({ scene }) => {
           .then(() => {
             if (cancelled) return;
 
-            // Initialize every tween now, including the cars that start later.
+            // Initialize every tween before the first animation frame.
             entrance.progress(1, true).progress(0, true);
 
             // Let the browser settle layout and prepare layers before moving them.
@@ -124,19 +184,21 @@ const GarageBudgetScene = ({ scene }) => {
         return () => {
           cancelled = true;
           cancelAnimationFrame(preparationFrame);
+          if (entranceRef.current === entrance) entranceRef.current = null;
           if (onPageLoad) window.removeEventListener("load", onPageLoad);
         };
       });
 
       return () => media.revert();
     },
-    { scope: sceneRef, dependencies: [scene], revertOnUpdate: true },
+    { scope: sceneRef, dependencies: [scene, onNavigate], revertOnUpdate: true },
   );
 
   return (
     <section
       ref={sceneRef}
       className="garage-budget"
+      aria-busy={isTransitioning}
       aria-labelledby={`garage-budget-${scene.id}`}
       aria-label="My ideal 2-car garage (with a twist)"
       style={{
@@ -145,7 +207,7 @@ const GarageBudgetScene = ({ scene }) => {
         "--garage-text": scene.textColor,
       }}
     >
-      <div className="garage-budget__stage">
+      <div className="garage-budget__stage" id="garage-budget-scene">
         <div className="garage-budget__intro">
           <p className="garage-budget__title">
             My 2 Car Garage Solution (with a twist)
@@ -185,6 +247,10 @@ const GarageBudgetScene = ({ scene }) => {
                 aria-hidden="true"
                 width={car.wordmarkWidth}
                 height={car.wordmarkHeight}
+                style={car.wordmarkAspectRatio ? {
+                  aspectRatio: car.wordmarkAspectRatio,
+                  objectFit: "cover",
+                } : undefined}
                 loading="eager"
                 decoding="async"
               />
@@ -198,6 +264,37 @@ const GarageBudgetScene = ({ scene }) => {
 
         <p className="garage-budget__description">{scene.description}</p>
       </div>
+
+      {previousBudget && (
+        <button
+          ref={previousArrowRef}
+          type="button"
+          className="garage-budget__arrow garage-budget__arrow--previous"
+          aria-label={`Previous garage: ${previousBudget} budget`}
+          aria-controls="garage-budget-scene"
+          disabled={isTransitioning}
+          onClick={() => navigate(-1)}
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m15 5-7 7 7 7" />
+          </svg>
+        </button>
+      )}
+      {nextBudget && (
+        <button
+          ref={nextArrowRef}
+          type="button"
+          className="garage-budget__arrow garage-budget__arrow--next"
+          aria-label={`Next garage: ${nextBudget} budget`}
+          aria-controls="garage-budget-scene"
+          disabled={isTransitioning}
+          onClick={() => navigate(1)}
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
+      )}
     </section>
   );
 };

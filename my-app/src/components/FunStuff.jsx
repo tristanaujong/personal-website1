@@ -1,20 +1,24 @@
 import myCarCover from "./images/my-car-cover.png";
+import ageraCover from "./images/dream-cars/koenigsegg_agera_r_11-removebg-preview.png";
 
 const columns = [
   [
     {
-      height: "h-64",
+      height: "h-[10.72rem]",
       title: "My Car",
       href: "#/fun/my-car",
-      background: "bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600",
-      hoverBackground: "hover:bg-gradient-to-br hover:from-orange-200 hover:via-orange-300 hover:to-orange-400",
-      textColor: "text-stone-100",
       image: myCarCover,
-      imageClass: "right-3 top-3 h-60 w-120",
+      imageClass: "right-2 top-2 h-[10.05rem] w-[20.1rem]",
+    },
+    {
+      height: "h-32",
+      title: "My Dream Cars",
+      href: "#/fun/dream-cars",
+      image: ageraCover,
+      imageClass: "right-3 top-2 h-28 w-[55%] object-right",
     },
     { height: "h-32", title: "Diecast Collection", href: "#diecast-collection" },
     { height: "h-16", title: "Cars I Have Driven", href: "#cooking" },
-    { height: "h-16", title: "My Ideal 2-Car Garage (with a twist)", href: "#/fun/two-car-garage" },
     { height: "h-40", title: "Cool Cars I Have Spotted", href: "#/fun/spotted-cars" },
   ],
   [

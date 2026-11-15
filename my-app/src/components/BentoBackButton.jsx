@@ -2,9 +2,9 @@ const BentoBackButton = () => {
   return (
     <a
       href="#/fun"
-      className="mb-5 inline-flex w-fit font-sf-pro text-sm font-normal tracking-[0.3em] text-stone-900 transition duration-300 hover:-translate-x-1 hover:text-stone-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-4"
+      className="mb-5 inline-flex w-fit shrink-0 items-center gap-4 font-sf-pro text-sm font-normal text-[#080808] no-underline hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#080808]"
     >
-      &lt;- BACK
+      Back to Fun Stuff <span className="text-[22px]" aria-hidden="true">↗</span>
     </a>
   );
 };

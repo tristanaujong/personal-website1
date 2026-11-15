@@ -11,7 +11,7 @@ import Projects from "./components/Projects";
 import FunStuff from "./components/FunStuff";
 import MyCar from "./Pages/MyCar";
 import SpottedCars from "./Pages/SpottedCars";
-import TwoCarGarage from "./Pages/TwoCarGarage";
+import DreamCars from "./Pages/DreamCars";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -26,7 +26,7 @@ const App = () => {
     const isFunPage = currentRoute === "/fun";
     const isMyCarPage = currentRoute === "/fun/my-car";
     const isSpottedCarsPage = currentRoute === "/fun/spotted-cars";
-    const isTwoCarGaragePage = currentRoute === "/fun/two-car-garage" || currentRoute === "two-car-garage";
+    const isDreamCarsPage = ["/fun/dream-cars", "/dream-cars", "dream-cars", "/fun/two-car-garage", "/two-car-garage", "two-car-garage"].includes(currentRoute);
 
     useEffect(() => {
         const updateCurrentRoute = () => {
@@ -42,11 +42,10 @@ const App = () => {
         };
     }, []);
 
-    if (isTwoCarGaragePage) {
+    if (isDreamCarsPage) {
         return (
-            <main>
-                <SmoothScroll />
-                <TwoCarGarage />
+            <main className="dream-cars-route">
+                <DreamCars />
             </main>
         )
     }
