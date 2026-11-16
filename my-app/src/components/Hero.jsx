@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
+import PageReadyContext from "./PageReadyContext";
 import heroPicture from './images/hero-picture.png'
 import Tilt from "react-parallax-tilt";
 import { useGSAP } from "@gsap/react";
@@ -13,9 +14,12 @@ import { FaYoutube } from "react-icons/fa";
 gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
+    const isPageReady = useContext(PageReadyContext);
     const heroRef = useRef(null);
 
     useGSAP(() => {
+        if (!isPageReady) return;
+
         const timeline = gsap.timeline({
             defaults: {
                 ease: 'power3.out',
@@ -41,7 +45,7 @@ const Hero = () => {
                 y: 50,
                 scale: 0.9,
             }, '-=0.65');
-    }, { scope: heroRef });
+    }, { scope: heroRef, dependencies: [isPageReady], revertOnUpdate: true });
     
 // TODO: fix small screen spacing 
     return (
@@ -76,7 +80,7 @@ const Hero = () => {
                         Turning curiosity into elements of fruition by trusting the process.
                     </h2>
                     <p className="shrink-0 text-sm font-thin italic text-stone-900 md:text-base">
-                        v.1.1.1
+                        v1.2
                     </p>
                 </div>
                 <div className="hero-icons-wrapper flex gap-4 mt-6 text-stone-900">

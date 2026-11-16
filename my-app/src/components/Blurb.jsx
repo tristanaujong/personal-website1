@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import PageReadyContext from "./PageReadyContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
@@ -6,9 +7,12 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 const Blurb = () => {
+  const isPageReady = useContext(PageReadyContext);
   const blurbRef = useRef(null);
 
   useGSAP(() => {
+    if (!isPageReady) return;
+
     const split = SplitText.create(".blurb-text", { type: "words" });
 
     gsap.to(split.words, {
@@ -23,7 +27,7 @@ const Blurb = () => {
     });
 
     return () => split.revert();
-  }, { scope: blurbRef });
+  }, { scope: blurbRef, dependencies: [isPageReady], revertOnUpdate: true });
 
   return (
     <section id="blurb" ref={blurbRef} className="mt-10">

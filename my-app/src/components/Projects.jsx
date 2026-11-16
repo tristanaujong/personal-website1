@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import PageReadyContext from "./PageReadyContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
@@ -26,10 +27,13 @@ import pythonLogo from "./images/pythonlogo.webp";
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 const Projects = () => {
+  const isPageReady = useContext(PageReadyContext);
   const projectsRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
 
   useGSAP(() => {
+    if (!isPageReady) return;
+
     const heading = projectsRef.current.querySelector(".projects-text");
     const cardGrid = projectsRef.current.querySelector(".card-grid");
     const split = SplitText.create(heading, { type: "chars" });
@@ -109,7 +113,7 @@ const Projects = () => {
       cardAnimation.kill();
       split.revert();
     };
-  }, { scope: projectsRef });
+  }, { scope: projectsRef, dependencies: [isPageReady], revertOnUpdate: true });
 
   const cards = [
     {

@@ -8,7 +8,8 @@ const columns = [
       title: "My Car",
       href: "#/fun/my-car",
       image: myCarCover,
-      imageClass: "right-2 top-2 h-[10.05rem] w-[20.1rem]",
+      imageClass: "left-2 top-2 h-[10.05rem] w-[20.1rem]",
+      titleClass: "ml-auto",
     },
     {
       height: "h-32",
@@ -17,7 +18,7 @@ const columns = [
       image: ageraCover,
       imageClass: "right-3 top-2 h-28 w-[55%] object-right",
     },
-    { height: "h-32", title: "Diecast Collection", href: "#diecast-collection" },
+    { height: "h-32", title: "Diecast Collection", href: "#/fun/diecast-collection" },
     { height: "h-16", title: "Cars I Have Driven", href: "#cooking" },
     { height: "h-40", title: "Cool Cars I Have Spotted", href: "#/fun/spotted-cars" },
   ],
@@ -70,7 +71,9 @@ const FunStuff = () => {
                     />
                   )}
 
-                  <span className="relative z-10 self-end font-sf-pro text-xl font-semibold">
+                  <span
+                    className={`relative z-10 self-end font-sf-pro text-xl font-semibold ${card.titleClass ?? ""}`}
+                  >
                     {card.title}
                   </span>
                 </a>

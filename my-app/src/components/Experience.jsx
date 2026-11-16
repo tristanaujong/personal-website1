@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import PageReadyContext from "./PageReadyContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
@@ -12,9 +13,12 @@ import tamuLogo from "./images/tamu_Logo.png";
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 const Experience = () => {
+  const isPageReady = useContext(PageReadyContext);
   const experienceRef = useRef(null);
 
   useGSAP(() => {
+    if (!isPageReady) return;
+
     const heading = experienceRef.current.querySelector(".experience-text");
     const cardGrid = experienceRef.current.querySelector(".card-grid");
     const split = SplitText.create(heading, { type: "chars" });
@@ -94,7 +98,7 @@ const Experience = () => {
       cardAnimation.kill();
       split.revert();
     };
-  }, { scope: experienceRef });
+  }, { scope: experienceRef, dependencies: [isPageReady], revertOnUpdate: true });
 
   const cards = [
     {

@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
+import PageReadyContext from "../components/PageReadyContext";
 import { dreamCars, formatPrice, usedPriceResearchDate } from "./dreamCarsData";
 import "./DreamCars.css";
 
@@ -10,6 +11,7 @@ const Arrow = ({ up = false }) => (
 );
 
 const DreamCars = () => {
+  const isPageReady = useContext(PageReadyContext);
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStart = useRef(null);
   const previousButton = useRef(null);
@@ -44,6 +46,8 @@ const DreamCars = () => {
   }, [activeIndex]);
 
   useEffect(() => {
+    if (!isPageReady) return;
+
     const onKeyDown = (event) => {
       if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
           event.target.closest("input, textarea, select, [contenteditable='true']")) return;
@@ -58,7 +62,7 @@ const DreamCars = () => {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [lastIndex, navigate]);
+  }, [isPageReady, lastIndex, navigate]);
 
   useEffect(() => {
     // A disabled endpoint must not strand keyboard focus.

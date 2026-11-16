@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import PageReadyContext from "../components/PageReadyContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
@@ -173,6 +174,7 @@ const carPlaces = [
 ];
 
 const MyCar = () => {
+  const isPageReady = useContext(PageReadyContext);
   const pageRef = useRef(null);
   const placesViewportRef = useRef(null);
   const placeIsAnimatingRef = useRef(false);
@@ -245,6 +247,8 @@ const MyCar = () => {
 
   useGSAP(
     () => {
+      if (!isPageReady) return;
+
       const heading = pageRef.current.querySelector(".my-car-text");
       const split = SplitText.create(heading, { type: "chars" });
 
@@ -278,7 +282,7 @@ const MyCar = () => {
         split.revert();
       };
     },
-    { scope: pageRef }
+    { scope: pageRef, dependencies: [isPageReady], revertOnUpdate: true }
   );
 
   return (
