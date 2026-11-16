@@ -284,7 +284,7 @@ const DiecastModel = () => {
 
   return (
     <div className="diecast-model" data-status={status}>
-      <div className="diecast-model__canvas" ref={hostRef} aria-busy={status === "loading"} />
+      <div className="diecast-model__canvas" ref={hostRef} data-lenis-prevent="" aria-busy={status === "loading"} />
       {status === "loading" && (
         <div className="diecast-model__message" role="status">
           <span className="diecast-model__spinner" aria-hidden="true" />

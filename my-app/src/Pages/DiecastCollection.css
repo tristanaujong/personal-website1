@@ -59,9 +59,10 @@
 .diecast-model {
   position: absolute;
   top: 24%;
-  right: 12%;
   bottom: 0;
-  left: 12%;
+  left: 50%;
+  width: min(44vw, 42rem);
+  transform: translateX(-50%);
   z-index: 1;
 }
 
@@ -150,6 +151,153 @@
   object-fit: contain;
 }
 
+.diecast-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 6rem);
+  width: 90%;
+  max-width: 96rem;
+  margin: clamp(6rem, 12svh, 10rem) auto clamp(3rem, 6vw, 6rem);
+  scroll-margin-top: 6rem;
+}
+
+.diecast-story__text {
+  margin: 0;
+  color: rgb(28 25 23 / 15%);
+  font-size: clamp(1.5rem, 2.25vw, 3rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.diecast-story__figure { margin: 0; }
+.diecast-story__figure figcaption {
+  margin-top: 0.75rem;
+  color: #6b6b6b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.diecast-story__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: 1rem;
+}
+
+.diecast-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 90%;
+  max-width: 96rem;
+  height: clamp(30rem, 70svh, 56rem);
+  margin: 0 auto clamp(3rem, 6vw, 6rem);
+}
+
+.diecast-gallery__card {
+  --gallery-inset: clamp(0.75rem, 1.25vw, 1.25rem);
+  --gallery-logo-size: clamp(3.5rem, 7vw, 6rem);
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #e7e5e4;
+}
+
+.diecast-gallery__card::after,
+.diecast-collage__tile--captioned::after {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  height: 50%;
+  background: linear-gradient(to top, rgb(0 0 0 / 82%), rgb(0 0 0 / 30%) 55%, transparent);
+  content: "";
+  pointer-events: none;
+}
+
+.diecast-gallery__card--featured { grid-row: span 2; }
+.diecast-gallery__photo,
+.diecast-collage__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.diecast-gallery__card--featured .diecast-gallery__photo { object-position: center bottom; }
+
+.diecast-gallery__logo {
+  position: absolute;
+  z-index: 2;
+  right: var(--gallery-inset);
+  bottom: var(--gallery-inset);
+  width: var(--gallery-logo-size);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 28%));
+  pointer-events: none;
+}
+
+.diecast-gallery__caption {
+  position: absolute;
+  z-index: 2;
+  right: calc(var(--gallery-logo-size) + var(--gallery-inset) + var(--gallery-inset));
+  bottom: var(--gallery-inset);
+  left: var(--gallery-inset);
+  color: #fff;
+  font-size: clamp(0.875rem, 1.2vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.diecast-collage {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: clamp(7rem, 13.5vw, 15rem);
+  grid-auto-flow: dense;
+  gap: 1.25rem;
+  width: 90%;
+  max-width: 96rem;
+  margin: 0 auto clamp(3rem, 6vw, 6rem);
+}
+
+.diecast-collage__tile {
+  position: relative;
+  grid-column: span 2;
+  grid-row: span 2;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #e7e5e4;
+}
+
+.diecast-collage__tile--feature { grid-column: span 3; grid-row: span 3; }
+.diecast-collage__tile--portrait { grid-row: span 3; }
+.diecast-collage__tile--portrait img { object-position: center bottom; }
+.diecast-collage__tile--wide { grid-column: span 4; }
+.diecast-collage__tile--strip { grid-row: span 1; }
+
+.diecast-collage__caption {
+  position: absolute;
+  z-index: 2;
+  right: clamp(0.75rem, 1.25vw, 1.25rem);
+  bottom: clamp(0.75rem, 1.25vw, 1.25rem);
+  left: clamp(0.75rem, 1.25vw, 1.25rem);
+  color: #fff;
+  font-size: clamp(0.875rem, 1.2vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
 .diecast-page__credit {
   margin: auto 1.5rem 0;
   padding-top: 3rem;
@@ -169,6 +317,8 @@
 
 @media (min-width: 768px) and (max-width: 1100px) {
   .diecast-page__brands { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .diecast-collage { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(8rem, 20vw, 15rem); }
+  .diecast-collage__tile--feature { grid-column: span 2; grid-row: span 2; }
 }
 
 @media (max-width: 767px) {
@@ -176,10 +326,21 @@
   .diecast-page__back { top: 8.5rem; right: 6%; font-size: 0.75rem; }
   .diecast-page__hero { height: clamp(330px, 52svh, 540px); margin-top: 3svh; }
   .diecast-page__title { top: 5.5svh; font-size: 19vw; letter-spacing: -0.06em; }
-  .diecast-model { top: 26%; right: 1%; left: 1%; }
+  .diecast-model { top: 26%; width: 82%; }
   .diecast-model__tools { gap: 0.8rem; font-size: 0.625rem; }
   .diecast-page__brands { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem 1.5rem; width: 86%; margin-top: 2rem; }
   .diecast-page__brands img { height: 2.8rem; }
+  .diecast-story { grid-template-columns: minmax(0, 1fr); width: calc(100% - 3rem); gap: 2rem; margin-top: 5rem; }
+  .diecast-story__text { font-size: clamp(1.5rem, 4.5vw, 2rem); }
+  .diecast-gallery { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; width: calc(100% - 3rem); height: auto; }
+  .diecast-gallery__card { aspect-ratio: 16 / 9; }
+  .diecast-gallery__card--featured { grid-row: auto; aspect-ratio: 1; }
+  .diecast-collage { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: clamp(7rem, 40vw, 18rem); width: calc(100% - 3rem); gap: 1rem; }
+  .diecast-collage__tile { grid-column: span 1; grid-row: span 1; }
+  .diecast-collage__tile--feature { grid-column: span 2; grid-row: span 2; }
+  .diecast-collage__tile--portrait { grid-column: span 2; grid-row: span 3; }
+  .diecast-collage__tile--wide,
+  .diecast-collage__tile--strip { grid-column: span 2; }
   .diecast-page__credit { padding-top: 3rem; font-size: 0.58rem; }
 }
 
@@ -189,6 +350,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .diecast-story__text { color: #1c1917; }
   .diecast-model__canvas { transition: none; }
   .diecast-model__spinner { animation: none; }
 }

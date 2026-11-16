@@ -43,6 +43,7 @@ const PageContent = ({ currentRoute }) => {
     if (currentRoute === "/fun/diecast-collection") {
         return (
             <main className="diecast-route">
+                <SmoothScroll />
                 <Navbar />
                 <Suspense fallback={<div className="min-h-dvh" role="status" aria-label="Loading Diecast Collection" />}>
                     <DiecastCollection />
