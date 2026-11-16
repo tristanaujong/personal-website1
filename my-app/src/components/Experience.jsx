@@ -105,7 +105,7 @@ const Experience = () => {
       title: "LOCKHEED MARTIN",
       description: "Software Engineer Intern",
       img: lockheedLogo,
-      year: "2025, Present",
+      year: "2025, 2026",
       hoverColor: "#0f3b61",
       link: "https://www.lockheedmartin.com",
     },

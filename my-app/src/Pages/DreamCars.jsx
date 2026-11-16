@@ -48,6 +48,22 @@ const DreamCars = () => {
   useEffect(() => {
     if (!isPageReady) return;
 
+    let wheelDelta = 0;
+    const onWheel = (event) => {
+      if (event.ctrlKey || event.metaKey || event.altKey ||
+          Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+
+      event.preventDefault();
+      const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1);
+      if (Math.sign(delta) !== Math.sign(wheelDelta)) wheelDelta = 0;
+      wheelDelta += delta;
+      if (Math.abs(wheelDelta) < 40) return;
+
+      // Retarget the timeline immediately, even during an ongoing transition.
+      navigate(Math.sign(wheelDelta));
+      wheelDelta = 0;
+    };
+
     const onKeyDown = (event) => {
       if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
           event.target.closest("input, textarea, select, [contenteditable='true']")) return;
@@ -60,8 +76,12 @@ const DreamCars = () => {
         setActiveIndex(event.key === "Home" ? 0 : lastIndex);
       }
     };
+    window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("keydown", onKeyDown);
+    };
   }, [isPageReady, lastIndex, navigate]);
 
   useEffect(() => {

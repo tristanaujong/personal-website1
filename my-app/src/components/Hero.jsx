@@ -47,7 +47,6 @@ const Hero = () => {
             }, '-=0.65');
     }, { scope: heroRef, dependencies: [isPageReady], revertOnUpdate: true });
     
-// TODO: fix small screen spacing 
     return (
     <>
     <svg width="0" height="0" className="absolute" aria-hidden="true" focusable="false">
@@ -66,7 +65,7 @@ const Hero = () => {
             </linearGradient>
         </defs>
     </svg>
-    <section id="hero" ref={heroRef} className="flex min-h-dvh items-center justify-center">
+    <section id="hero" ref={heroRef} className="flex min-h-dvh items-center justify-center pt-28 md:pt-0">
         <div className="text-stone-900 mx-auto flex w-full max-w-[96rem] flex-col items-center justify-center gap-8 px-6 py-12 2xl:flex-row 2xl:gap-[clamp(4rem,9vw,11rem)] 2xl:px-12">
             <div className="flex w-fit shrink-0 flex-col items-start justify-center">
                 <h1 className="hero-title-line whitespace-nowrap font-sf-pro text-[clamp(3rem,13vw,9rem)] font-bold leading-none">
