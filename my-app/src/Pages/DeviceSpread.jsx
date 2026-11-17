@@ -15,6 +15,8 @@ import microphone from "../components/images/device-spread/dji-mic-mini.png";
 import gimbal from "../components/images/device-spread/dji-osmo-mobile-se.png";
 import radar from "../components/images/device-spread/uniden-r4.png";
 import dashcam from "../components/images/device-spread/viofo-a229-pro.png";
+import lg24 from "../components/images/device-spread/lg-24-ips.png";
+import lg27 from "../components/images/device-spread/lg-27-ips.png";
 import "./DeviceSpread.css";
 
 const devices = [
@@ -49,6 +51,23 @@ const devices = [
     subtitle: "Lightning",
     blurb: "Highkey I use these quite often.",
     image: airpods, width: 545, height: 458,
+  },
+  {
+    id: "lg-24",
+    category: "Monitor",
+    name: "LG Borderless Design Monitor",
+    subtitle: '24", 100 HZ, IPS',
+    blurb: "Works great for my dual monitor set up.",
+    image: lg24, width: 539, height: 463,
+    imageCopies: 2,
+  },
+  {
+    id: "lg-27",
+    category: "Monitor",
+    name: "LG UltraGear Gaming Monitor",
+    subtitle: '27", 144 HZ, IPS',
+    blurb: "Works great for my single monitor set up.",
+    image: lg27, width: 440, height: 436,
   },
   {
     id: "tablet",
@@ -156,15 +175,19 @@ const DeviceCard = ({ device, eager = false }) => (
       <h2>{device.name}</h2>
       <p className="device-card__subtitle">{device.subtitle}</p>
     </figcaption>
-    <div className="device-card__image">
-      <img
-        src={device.image}
-        alt={device.name}
-        width={device.width}
-        height={device.height}
-        loading={eager ? "eager" : "lazy"}
-        decoding="async"
-      />
+    <div className={`device-card__image${device.imageCopies > 1 ? " device-card__image--overlaid" : ""}`}>
+      {Array.from({ length: device.imageCopies ?? 1 }, (_, imageIndex) => (
+        <img
+          src={device.image}
+          alt={imageIndex === 0 ? device.name : ""}
+          aria-hidden={imageIndex > 0 ? true : undefined}
+          width={device.width}
+          height={device.height}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+          key={imageIndex}
+        />
+      ))}
     </div>
     <p className="device-card__blurb">{device.blurb}</p>
   </figure>

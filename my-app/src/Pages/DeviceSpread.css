@@ -111,6 +111,11 @@
   object-fit: contain;
 }
 
+.device-card__image--overlaid { position: relative; }
+.device-card__image--overlaid img { position: absolute; width: 82%; height: 82%; }
+.device-card__image--overlaid img:first-child { top: 0; left: 0; }
+.device-card__image--overlaid img:last-child { right: 0; bottom: 0; z-index: 1; }
+
 .device-card--laptop { grid-column: 1 / span 8; grid-row: 1; }
 .device-card--laptop h2 { max-width: 22rem; }
 .device-card--laptop .device-card__image { padding-top: 0.5rem; }
@@ -128,14 +133,16 @@
 
 .device-card--watch { grid-column: 1 / span 4; grid-row: 2; background: #eceae6; }
 .device-card--airpods { grid-column: 5 / span 4; grid-row: 2; background: #edf1f7; }
-.device-card--tablet { grid-column: 5 / span 4; grid-row: 4; background: #f0edf7; }
-.device-card--keyboard { grid-column: 5 / span 4; grid-row: 3; }
-.device-card--mouse { grid-column: 9 / span 4; grid-row: 3; }
-.device-card--headphones { grid-column: 9 / span 4; grid-row: 4; background: #edf1f7; }
+.device-card--lg-24 { grid-column: 1 / span 6; grid-row: 3; background: #f3f0e3; }
+.device-card--lg-27 { grid-column: 7 / span 6; grid-row: 3; background: #edf1f7; }
+.device-card--tablet { grid-column: 5 / span 4; grid-row: 5; background: #f0edf7; }
+.device-card--keyboard { grid-column: 5 / span 4; grid-row: 4; }
+.device-card--mouse { grid-column: 9 / span 4; grid-row: 4; }
+.device-card--headphones { grid-column: 9 / span 4; grid-row: 5; background: #edf1f7; }
 .device-chair-stack {
   display: grid;
   grid-column: 1 / span 4;
-  grid-row: 3 / span 3;
+  grid-row: 4 / span 3;
   grid-template-rows: minmax(0, 1fr) 29rem calc(var(--device-row-height) - 8rem);
   gap: 1.25rem;
   min-height: 0;
@@ -152,10 +159,10 @@
 .device-card--camera h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .device-card--camera .device-card__image { padding-top: 0.75rem; }
 .device-card--camera .device-card__blurb { margin-top: 0.75rem; }
-.device-card--mic-mini { grid-column: 5 / span 4; grid-row: 5; }
-.device-card--gimbal { grid-column: 9 / span 4; grid-row: 5; background: #eceae6; }
-.device-card--radar { grid-column: 1 / span 6; grid-row: 6; background: #edf1f7; }
-.device-card--dashcam { grid-column: 7 / span 6; grid-row: 6; background: #eaf0ed; }
+.device-card--mic-mini { grid-column: 5 / span 4; grid-row: 6; }
+.device-card--gimbal { grid-column: 9 / span 4; grid-row: 6; background: #eceae6; }
+.device-card--radar { grid-column: 1 / span 6; grid-row: 7; background: #edf1f7; }
+.device-card--dashcam { grid-column: 7 / span 6; grid-row: 7; background: #eaf0ed; }
 
 @media (max-width: 1023px) {
   .device-chair-stack { grid-column: 1 / -1; grid-row: auto; grid-template-rows: 33rem 29rem 21rem; }
