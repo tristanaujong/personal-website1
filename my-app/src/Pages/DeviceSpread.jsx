@@ -23,7 +23,7 @@ const devices = [
     id: "phone",
     category: "Phone",
     name: "iPhone 16 Pro",
-    subtitle: "256 GB",
+    subtitle: "256 GB - 89% battery health lol",
     blurb: "I wish I had more storage.",
     image: phone, width: 1080, height: 1350,
   },
