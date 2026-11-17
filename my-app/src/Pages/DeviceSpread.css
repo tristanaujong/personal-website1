@@ -38,9 +38,10 @@
 }
 
 .device-spread-grid {
+  --device-row-height: clamp(28rem, 35vw, 32rem);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-auto-rows: minmax(clamp(28rem, 35vw, 32rem), auto);
+  grid-auto-rows: minmax(var(--device-row-height), auto);
   gap: 1.25rem;
 }
 
@@ -127,16 +128,47 @@
 
 .device-card--watch { grid-column: 1 / span 4; grid-row: 2; background: #eceae6; }
 .device-card--airpods { grid-column: 5 / span 4; grid-row: 2; background: #edf1f7; }
-.device-card--tablet { grid-column: 1 / span 3; grid-row: 3; background: #f0edf7; }
-.device-card--keyboard { grid-column: 4 / span 3; grid-row: 3; }
-.device-card--mouse { grid-column: 7 / span 3; grid-row: 3; }
-.device-card--chair { grid-column: 10 / span 3; grid-row: 3; background: #f3f0e3; }
+.device-card--tablet { grid-column: 5 / span 4; grid-row: 4; background: #f0edf7; }
+.device-card--keyboard { grid-column: 5 / span 4; grid-row: 3; }
+.device-card--mouse { grid-column: 9 / span 4; grid-row: 3; }
+.device-card--headphones { grid-column: 9 / span 4; grid-row: 4; background: #edf1f7; }
+.device-chair-stack {
+  display: grid;
+  grid-column: 1 / span 4;
+  grid-row: 3 / span 3;
+  grid-template-rows: minmax(0, 1fr) 29rem calc(var(--device-row-height) - 8rem);
+  gap: 1.25rem;
+  min-height: 0;
+  min-width: 0;
+}
+
+.device-card--chair { background: #f3f0e3; }
+.device-card--sony-zv1 { background: #eaf0ed; }
+.device-chair-stack .device-card__image { min-height: 0; flex: 1 1 0; }
+.device-card--sony-zv1 h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+.device-card--sony-zv1 .device-card__image { padding-top: 0.75rem; }
+.device-card--sony-zv1 .device-card__blurb { margin-top: 0.75rem; }
+.device-card--camera { background: #eaf0ed; }
+.device-card--camera h2 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+.device-card--camera .device-card__image { padding-top: 0.75rem; }
+.device-card--camera .device-card__blurb { margin-top: 0.75rem; }
+.device-card--mic-mini { grid-column: 5 / span 4; grid-row: 5; }
+.device-card--gimbal { grid-column: 9 / span 4; grid-row: 5; background: #eceae6; }
+.device-card--radar { grid-column: 1 / span 6; grid-row: 6; background: #edf1f7; }
+.device-card--dashcam { grid-column: 7 / span 6; grid-row: 6; background: #eaf0ed; }
+
+@media (max-width: 1023px) {
+  .device-chair-stack { grid-column: 1 / -1; grid-row: auto; grid-template-rows: 33rem 29rem 21rem; }
+  .device-chair-stack .device-card { min-height: 0; }
+}
 
 @media (min-width: 640px) and (max-width: 1023px) {
   .device-spread-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(29rem, auto); }
   .device-card { grid-column: auto; grid-row: auto; }
   .device-card--laptop { grid-column: 1 / -1; }
   .device-card--phone { grid-row: span 2; }
+  .device-card--mouse { grid-column: 1 / -1; }
+  .device-card--headphones { grid-column: 1 / -1; }
 }
 
 @media (max-width: 639px) {
