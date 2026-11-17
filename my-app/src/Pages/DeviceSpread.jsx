@@ -11,14 +11,70 @@ import chair from "../components/images/device-spread/koenigsegg-gaming-chair.pn
 import "./DeviceSpread.css";
 
 const devices = [
-  { id: "laptop", category: "Laptop", name: "Acer Predator Helios 300", subtitle: "Intel Core i7-12700H - RTX 3070 Ti - 16 GB RAM - 1 TB Storage", image: laptop, width: 649, height: 385 },
-  { id: "phone", category: "Phone", name: "iPhone 16 Pro", subtitle: "256 GB", image: phone, width: 1080, height: 1350 },
-  { id: "watch", category: "Watch", name: "Apple Watch Series 10", subtitle: "Jet Black", image: watch, width: 469, height: 532 },
-  { id: "airpods", category: "Audio", name: "AirPods Pro 2", subtitle: "Lightning", image: airpods, width: 545, height: 458 },
-  { id: "tablet", category: "Tablet", name: "iPad 10", subtitle: "64 GB", image: tablet, width: 470, height: 531 },
-  { id: "keyboard", category: "Keyboard", name: "Keychron K5 Max", subtitle: "Wireless", image: keyboard, width: 500, height: 500 },
-  { id: "mouse", category: "Mouse", name: "Glorious Model O", subtitle: "Wired", image: mouse, width: 500, height: 500 },
-  { id: "chair", category: "Chair", name: "Razer Enki Pro Koenigsegg Edition", subtitle: "Limited Edition", image: chair, width: 389, height: 641 },
+  {
+    id: "laptop",
+    category: "Laptop",
+    name: "Acer Predator Helios 300",
+    subtitle: "Intel Core i7-12700H - RTX 3070 Ti - 16 GB RAM - 1 TB Storage",
+    blurb: "Used for my entire undergrad so far with no issues.",
+    image: laptop, width: 649, height: 385,
+  },
+  {
+    id: "phone",
+    category: "Phone",
+    name: "iPhone 16 Pro",
+    subtitle: "256 GB",
+    blurb: "I wish I had more storage.",
+    image: phone, width: 1080, height: 1350,
+  },
+  {
+    id: "watch",
+    category: "Watch",
+    name: "Apple Watch Series 10",
+    subtitle: "Jet Black",
+    blurb: "Lowkey I don't wear this that often lol.",
+    image: watch, width: 469, height: 532,
+  },
+  {
+    id: "airpods",
+    category: "Audio",
+    name: "AirPods Pro 2",
+    subtitle: "Lightning",
+    blurb: "Highkey I use these quite often.",
+    image: airpods, width: 545, height: 458,
+  },
+  {
+    id: "tablet",
+    category: "Tablet",
+    name: "iPad 10",
+    subtitle: "64 GB",
+    blurb: "Used for digital notes and big screen doom-scrolling.",
+    image: tablet, width: 470, height: 531,
+  },
+  {
+    id: "keyboard",
+    category: "Keyboard",
+    name: "Keychron K5 Max",
+    subtitle: "Wireless",
+    blurb: "Low profile keyboard is nice but the switches are a bit too light (I mistype a lot as a result).",
+    image: keyboard, width: 500, height: 500,
+  },
+  {
+    id: "mouse",
+    category: "Mouse",
+    name: "Glorious Model O",
+    subtitle: "Wired",
+    blurb: "Bought this for Minecraft Hypixel Bedwars during Covid, still use it to this day.",
+    image: mouse, width: 500, height: 500,
+  },
+  {
+    id: "chair",
+    category: "Chair",
+    name: "Razer Enki Pro Koenigsegg Edition",
+    subtitle: "Limited Edition",
+    blurb: "Bought off of Facebook Marketplace for $500 and drove 6 hours to get it. Originally worth $1400.",
+    image: chair, width: 389, height: 641,
+  },
 ];
 
 const DeviceSpread = () => {
@@ -54,6 +110,7 @@ const DeviceSpread = () => {
                   decoding="async"
                 />
               </div>
+              <p className="device-card__blurb">{device.blurb}</p>
             </figure>
           ))}
         </div>
