@@ -64,7 +64,7 @@ const cards = [
     height: 7,
     columns: 4,
     title: "Device Spread",
-    href: "#device-spread",
+    href: "#/fun/device-spread",
     images: [deviceSpreadCover, deviceSpreadMouse],
   },
   { height: 7, columns: 3, title: "Fun Facts", href: "#fun-facts" },

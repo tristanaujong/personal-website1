@@ -12,6 +12,7 @@ import FunStuff from "./components/FunStuff";
 import MyCar from "./Pages/MyCar";
 import SpottedCars from "./Pages/SpottedCars";
 import DreamCars from "./Pages/DreamCars";
+import DeviceSpread from "./Pages/DeviceSpread";
 import PageTransition from "./components/PageTransition";
 
 const DiecastCollection = lazy(() => import("./Pages/DiecastCollection"));
@@ -29,6 +30,10 @@ const getCurrentRoute = () => {
 
     if (["/fun/diecast-collection", "/diecast-collection", "diecast-collection"].includes(route)) {
         return "/fun/diecast-collection";
+    }
+
+    if (["/fun/device-spread", "/device-spread", "device-spread"].includes(route)) {
+        return "/fun/device-spread";
     }
 
     return route.startsWith("/") ? route : "/";
@@ -58,6 +63,16 @@ const PageContent = ({ currentRoute }) => {
                 <DreamCars />
             </main>
         )
+    }
+
+    if (currentRoute === "/fun/device-spread") {
+        return (
+            <main className="device-spread-route">
+                <SmoothScroll />
+                <Navbar />
+                <DeviceSpread />
+            </main>
+        );
     }
 
     if (isMyCarPage || isSpottedCarsPage) {
