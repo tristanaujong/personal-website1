@@ -11,6 +11,31 @@
   min-width: 0;
 }
 
+.fun-bento__thumbnails {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  display: flex;
+  width: 85%;
+  height: 55%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.fun-bento__thumbnails img {
+  width: auto;
+  height: 100%;
+  min-width: 0;
+  max-width: 70%;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.fun-bento__thumbnails img:last-child { max-width: 22%; }
+
 @media (min-width: 640px) {
   .fun-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fun-bento__card { grid-column: span 1; }

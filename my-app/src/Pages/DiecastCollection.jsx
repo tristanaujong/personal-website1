@@ -232,6 +232,15 @@ const DiecastCollection = () => {
         <DiecastModel />
       </div>
 
+      <p className="diecast-page__credit">
+        <a href="https://sketchfab.com/3d-models/alfaromeo-f1-team-kick-c43-24-zhou-6be2b9c98a9a4534b197c13dba9eeff6" target="_blank" rel="noreferrer">
+          Alfa Romeo F1 Team KICK C43 #24 ZHOU
+        </a>{" "}
+        by <a href="https://sketchfab.com/Metazeon" target="_blank" rel="noreferrer">Metazeon</a>
+        <span aria-hidden="true"> · </span>
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>
+      </p>
+
       <ul className="diecast-page__brands" aria-label="Diecast brands">
         {brands.map((brand) => (
           <li key={brand.name}>
@@ -327,14 +336,6 @@ const DiecastCollection = () => {
         ))}
       </section>
 
-      <p className="diecast-page__credit">
-        <a href="https://sketchfab.com/3d-models/alfaromeo-f1-team-kick-c43-24-zhou-6be2b9c98a9a4534b197c13dba9eeff6" target="_blank" rel="noreferrer">
-          Alfa Romeo F1 Team KICK C43 #24 ZHOU
-        </a>{" "}
-        by <a href="https://sketchfab.com/Metazeon" target="_blank" rel="noreferrer">Metazeon</a>
-        <span aria-hidden="true"> · </span>
-        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>
-      </p>
     </section>
   );
 };

@@ -1,7 +1,9 @@
-import myCarCover from "./images/my-car-cover.png";
+import myCarCover from "./images/my-car/my-car-thumb.jpg";
 import ageraCover from "./images/dream-cars/koenigsegg_agera_r_11-removebg-preview.png";
 import diecastCover from "./images/diecast/diecast-cover.png";
 import spottedCarsCover from "./images/spotted-cars/imagec112.jpg";
+import deviceSpreadCover from "./images/device-spread/device-spread-thumb.png";
+import deviceSpreadMouse from "./images/device-spread/device-spread-thumb1.png";
 import "./FunStuff.css";
 
 // Heights are in rem; column spans give the desktop layout a fixed, varied rhythm.
@@ -12,8 +14,15 @@ const cards = [
     title: "My Car",
     href: "#/fun/my-car",
     image: myCarCover,
-    imageClass: "left-2 top-2 h-[calc(100%_-_1rem)] w-[70%] object-left",
-    titleClass: "ml-auto",
+    imageClass: "right-0 top-0 h-full w-[85%]",
+    imageStyle: {
+      objectFit: "cover",
+      objectPosition: "center 60%",
+      opacity: 1,
+      maskImage: "linear-gradient(to right, transparent, rgb(0 0 0 / 15%) 6%, #000 30%)",
+      WebkitMaskImage: "linear-gradient(to right, transparent, rgb(0 0 0 / 15%) 6%, #000 30%)",
+    },
+    titleClass: "max-w-[48%]",
   },
   {
     height: 9.5,
@@ -51,7 +60,13 @@ const cards = [
     },
     titleClass: "max-w-[48%]",
   },
-  { height: 7, columns: 4, title: "Device Spread", href: "#device-spread" },
+  {
+    height: 7,
+    columns: 4,
+    title: "Device Spread",
+    href: "#device-spread",
+    images: [deviceSpreadCover, deviceSpreadMouse],
+  },
   { height: 7, columns: 3, title: "Fun Facts", href: "#fun-facts" },
   // Anchor the lower group so dense packing cannot move its shared baseline.
   { height: 10, columns: 5, desktopColumn: 1, desktopRow: 128, title: "Boba", href: "#boba" },
@@ -84,6 +99,14 @@ const FunStuff = () => {
             href={card.href}
             key={card.title}
           >
+            {card.images && (
+              <div className="fun-bento__thumbnails" aria-hidden="true">
+                {card.images.map((src) => (
+                  <img src={src} alt="" key={src} />
+                ))}
+              </div>
+            )}
+
             {card.image && (
               <img
                 src={card.image}
