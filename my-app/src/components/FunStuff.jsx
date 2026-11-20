@@ -41,7 +41,7 @@ const cards = [
     imageClass: "right-2 top-0 h-full w-[60%] object-top",
     titleClass: "max-w-[42%]",
   },
-  { height: 10, columns: 7, desktopColumn: 6, desktopRow: 43, title: "Places I Visited", href: "#places-i-visited" },
+  { height: 10, columns: 7, desktopColumn: 6, desktopRow: 43, title: "Places I Visited", href: "#/fun/places-i-visited" },
   { height: 8, columns: 3, desktopColumn: 1, desktopRow: 43, title: "Gym", href: "#gym" },
   { height: 8, columns: 2, desktopColumn: 4, desktopRow: 43, title: "Wishlist", href: "#wishlist" },
   {

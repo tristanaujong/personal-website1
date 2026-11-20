@@ -13,6 +13,7 @@ import MyCar from "./Pages/MyCar";
 import SpottedCars from "./Pages/SpottedCars";
 import DreamCars from "./Pages/DreamCars";
 import DeviceSpread from "./Pages/DeviceSpread";
+import PlacesVisited from "./Pages/PlacesVisited";
 import PageTransition from "./components/PageTransition";
 
 const DiecastCollection = lazy(() => import("./Pages/DiecastCollection"));
@@ -34,6 +35,10 @@ const getCurrentRoute = () => {
 
     if (["/fun/device-spread", "/device-spread", "device-spread"].includes(route)) {
         return "/fun/device-spread";
+    }
+
+    if (["/fun/places-i-visited", "/places-i-visited", "places-i-visited"].includes(route)) {
+        return "/fun/places-i-visited";
     }
 
     return route.startsWith("/") ? route : "/";
@@ -71,6 +76,16 @@ const PageContent = ({ currentRoute }) => {
                 <SmoothScroll />
                 <Navbar />
                 <DeviceSpread />
+            </main>
+        );
+    }
+
+    if (currentRoute === "/fun/places-i-visited") {
+        return (
+            <main className="places-route">
+                <SmoothScroll />
+                <Navbar />
+                <PlacesVisited />
             </main>
         );
     }
