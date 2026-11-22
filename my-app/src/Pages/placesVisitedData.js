@@ -12,6 +12,7 @@ import seattleMarket from "../components/images/places-i-visited/seattle/IMG_316
 import seattleSpaceNeedle from "../components/images/places-i-visited/seattle/IMG_3177.jpg";
 import seattleMountains from "../components/images/places-i-visited/seattle/IMG_3209.jpg";
 import dragonMuseumFriends from "../components/images/places-i-visited/totd/FullSizeRender (1).webp";
+import dragonCivicDrive from "../components/images/places-i-visited/totd/5213637_50 (1).jpg";
 import dragonNightStop from "../components/images/places-i-visited/totd/IMG_1468 (1).webp";
 import dragonGasStop from "../components/images/places-i-visited/totd/IMG_1485 (1).webp";
 import dragonCityDrive from "../components/images/places-i-visited/totd/IMG_1510 (1).webp";
@@ -70,8 +71,9 @@ const places = [
     name: "Tail of the Dragon",
     region: "Tennessee & North Carolina, USA",
     visited: "03/2026",
-    cover: dragonMountainLineup,
+    cover: dragonCivicDrive,
     photos: [
+      { src: dragonCivicDrive, alt: "An orange Honda Civic Si rounding a bend on a wooded road at Tail of the Dragon.", layout: "wide" },
       { src: dragonOverlookCars, alt: "White, orange, and blue cars parked at a mountain overlook beneath a blue sky.", layout: "feature" },
       { src: dragonMountainLineup, alt: "Three cars parked along a mountain road with forested ridges in the distance.", layout: "wide" },
       { src: dragonParthenon, alt: "A group of friends taking a selfie in front of the Parthenon's tall stone columns.", layout: "wide" },

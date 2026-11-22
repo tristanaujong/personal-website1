@@ -27,13 +27,14 @@
   letter-spacing: -0.055em;
 }
 
-.places-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.25rem; }
+.places-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; gap: 1.25rem; }
 .place-card {
+  --place-card-height: clamp(24rem, 40vw, 34rem);
   position: relative;
   display: flex;
   grid-column: span 7;
   min-width: 0;
-  min-height: clamp(24rem, 40vw, 34rem);
+  min-height: var(--place-card-height);
   overflow: hidden;
   padding: 0;
   isolation: isolate;
@@ -47,6 +48,7 @@
   transition: box-shadow 250ms ease, transform 250ms ease;
 }
 .place-card:nth-child(even) { grid-column: span 5; }
+.place-card--seattle { grid-row: span 2; min-height: calc(var(--place-card-height) * 1.5); }
 .place-card::after {
   position: absolute;
   z-index: -1;
@@ -151,8 +153,8 @@
 @media (max-width: 767px) {
   .places-page { padding-top: 9rem; }
   .places-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-  .place-card, .place-card:nth-child(even) { grid-column: auto; min-height: 25rem; }
-  .place-card:nth-child(even) { min-height: 20rem; }
+  .place-card, .place-card:nth-child(even) { --place-card-height: 25rem; grid-column: auto; grid-row: auto; }
+  .place-card:nth-child(even) { --place-card-height: 20rem; }
   .place-card__name { font-size: 3rem; }
   .places-page__header { margin-top: 1rem; }
   .places-page__header > a { margin-left: 0; }

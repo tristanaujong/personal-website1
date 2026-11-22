@@ -126,7 +126,7 @@ const PlacesVisited = () => {
           {places.map((place) => (
             <button
               key={place.id}
-              className="place-card"
+              className={`place-card place-card--${place.id}`}
               type="button"
               aria-haspopup="dialog"
               aria-label={`Open ${place.name} photo album`}
