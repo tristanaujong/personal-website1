@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/',
   plugins: [react(), tailwindcss()],
   server: {
-    // Windows reserves a port range that includes Vite's default port (5173).
-    port: 3000,
+    // Use a port outside Windows' reserved ranges on this machine.
+    port: 4000,
   },
 })
